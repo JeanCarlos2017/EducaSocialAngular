@@ -3,3 +3,10 @@
 .bg-claro{
     background-color: #F5F5F5;
 }
+
+.bg-escuro{
+    background-color: black
+}
+body{
+    background-color:#343a40;
+}
