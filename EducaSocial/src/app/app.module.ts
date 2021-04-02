@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
 import { FeedPostagemComponent } from './feed-postagem/feed-postagem.component';
 import { GroupComponent } from './group/group.component';
+import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
    HomeUsuarioComponent,
     FeedPostagemComponent,
-    GroupComponent
+    GroupComponent,
+    HomeGrupoComponent
   ],
   imports: [
     BrowserModule,

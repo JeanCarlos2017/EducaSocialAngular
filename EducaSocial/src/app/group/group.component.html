@@ -1,3 +1,5 @@
+<app-home-usuario></app-home-usuario>
+
 <div class="container mt-4">
     <div class="row">
         <h2> Grupos criados por você!</h2>
@@ -14,30 +16,7 @@
                 </div>
             </div>
         </div>
-       
-        <!-- card para criar novos grupos -->
-        <!-- Modal -->
-        <div class="modal fade" id="#modalCriaGrupo" tabindex="-1" role="dialog"
-            aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="button" class="btn btn-primary">Salvar mudanças</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- fim modal cria grupo  -->
+       <!-- fim card criar grupo -->
 
         <div class="col mt-2">
             <div class="card">
@@ -51,7 +30,8 @@
                         </small>
                     </p>
                     <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
+                    <a class="text-info mr-4">Editar </a>
+                    <a routerLink='/grupo-home' class="btn btn-success">Entrar </a>
                 </div>
             </div>
         </div>
