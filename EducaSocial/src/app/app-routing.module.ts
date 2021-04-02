@@ -8,19 +8,15 @@ import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home-usuario', 
+    redirectTo: '/home-usuario/posts', 
     pathMatch: 'full'
   },
   {
-    path: 'home-usuario',
-    component: HomeUsuarioComponent
-  },
-  {
-    'path': 'posts',
+    'path': 'home-usuario/posts',
     component: FeedPostagemComponent
   }, 
   {
-    'path': 'grupo-usuario',
+    'path': 'home-usuario/grupo-usuario',
     component: GroupComponent
   },
   {
