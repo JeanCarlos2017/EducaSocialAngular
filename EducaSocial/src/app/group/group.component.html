@@ -1,7 +1,7 @@
 <app-home-usuario></app-home-usuario>
 
 <!-- div de menu -->
-<div class="container">
+<div class="container p-0">
     <!-- BEGIN profile-header-tab -->
     <ul class="col-md-12 profile-header-tab nav nav-tabs">
         <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link">POSTS</a></li>
@@ -16,6 +16,8 @@
     <!-- END profile-header-tab -->
 </div>
 <!-- fim div menu -->
+
+<!-- Grupos criados por voce -->
 <div class="container mt-4">
     <div class="row">
         <h2> Grupos criados por você!</h2>
@@ -32,7 +34,7 @@
                 </div>
             </div>
         </div>
-       <!-- fim card criar grupo -->
+        <!-- fim card criar grupo -->
 
         <div class="col mt-2">
             <div class="card">
@@ -46,7 +48,8 @@
                         </small>
                     </p>
                     <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info mr-4">Editar </a>
+                    <button class="btn btn-info mr-4" data-toggle="modal" data-target="#modalEditarGrupo">Editar
+                    </button>
                     <a routerLink='/grupo-home' class="btn btn-success">Entrar </a>
                 </div>
             </div>
@@ -106,6 +109,7 @@
     <hr>
 </div>
 
+<!-- Grupos que voce participa -->
 <div class="container mb-4">
     <div class="row">
         <h2> Grupos que você participa! </h2>
@@ -124,8 +128,6 @@
                         </small>
                     </p>
                     <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-danger mr-3">Deletar</a>
-                    <a class="text-info">Editar </a>
                 </div>
             </div>
         </div>
@@ -142,8 +144,6 @@
                         </small>
                     </p>
                     <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-danger mr-3">Deletar</a>
-                    <a class="text-info">Editar </a>
                 </div>
             </div>
         </div>
@@ -160,8 +160,6 @@
                         </small>
                     </p>
                     <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-danger mr-3">Deletar</a>
-                    <a class="text-info">Editar </a>
                 </div>
             </div>
         </div>
@@ -178,8 +176,6 @@
                         </small>
                     </p>
                     <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-danger mr-3">Deletar</a>
-                    <a class="text-info">Editar </a>
                 </div>
             </div>
         </div>
@@ -188,7 +184,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Modal criar grupo-->
 <div class="modal fade" id="modalCriaGrupo" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -206,12 +202,12 @@
                         <label for="nomeGrupo">Nome do grupo</label>
                         <input type="text" class="form-control" id="nomeGrupo" aria-describedby="nomeHelp"
                             placeholder="nome do grupo">
-                   </div>
-                   
-                   <div class="form-group">
-                    <label for="fotoPerfil">Link foto perfil</label>
-                    <input type="text" class="form-control" id="fotoPerfil" aria-describedby="fotoHelp"
-                        placeholder="foto perfil">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fotoPerfil">Link foto perfil</label>
+                        <input type="text" class="form-control" id="fotoPerfil" aria-describedby="fotoHelp"
+                            placeholder="foto perfil">
                     </div>
 
                     <div class="form-group">
@@ -220,11 +216,15 @@
                             placeholder="foto capa">
                     </div>
 
-                    <div class="form-group">
-                        <label for="descricaoGrupo">Descrição do Grupo</label>
-                        <textarea class="form-control" id="descricaoGrupo" rows="5"></textarea>
-                      </div>
-                    
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="selectTema" name="selectTema">
+                          <option selected>Selecione um tema</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                    </div>
+
                 </form>
                 <!-- fim form -->
             </div>
@@ -236,3 +236,54 @@
     </div>
 </div>
 
+<!-- modal editar grupo -->
+<div class="modal fade" id="modalEditarGrupo" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="TituloModalCentralizado">Edite seu grupo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- form -->
+                <form>
+                    <div class="form-group">
+                        <label for="fotoPerfil">Link foto perfil</label>
+                        <input type="text" class="form-control" id="fotoPerfil" aria-describedby="fotoHelp"
+                            placeholder="foto perfil">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fotoCapa">Link foto capa</label>
+                        <input type="text" class="form-control" id="fotocapa" aria-describedby="fotoCapaHelp"
+                            placeholder="foto capa">
+                    </div>
+
+                   
+                    <div class="input-group mb-3">
+                        <select class="custom-select" id="selectTema" name="selectTema">
+                          <option selected>Selecione um tema</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricaoGrupo">Descrição do Grupo</label>
+                        <textarea class="form-control" id="descricaoGrupo" rows="5"></textarea>
+                    </div>
+
+                </form>
+                <!-- fim form -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar mudanças</button>
+            </div>
+        </div>
+    </div>
+</div>
