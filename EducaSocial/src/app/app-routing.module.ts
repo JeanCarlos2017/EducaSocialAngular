@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path:"home-usuario/tema/postagens",
     component: HomeTemaComponent
+  },
+  {
+    path: 'grupo-home/posts',
+    component: FeedPostagemComponent
   }
   
 ];
