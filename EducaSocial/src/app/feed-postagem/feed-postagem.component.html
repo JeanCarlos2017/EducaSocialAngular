@@ -1,4 +1,5 @@
-<app-home-usuario></app-home-usuario>
+<app-home-usuario *ngIf="this.router.url !== '/grupo-home/posts' "></app-home-usuario>
+<app-home-grupo *ngIf="this.router.url === '/grupo-home/posts' "></app-home-grupo>
 
 <div class="container p-0">
     <!-- BEGIN profile-header-tab -->
@@ -138,3 +139,4 @@
         <!-- end #profile-post tab -->
     </div>
     <!-- end tab-content -->
+</div>
