@@ -1,40 +1,67 @@
-
-    <div class="container p-0 bg-dark">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="content" class="content content-full-width">
-                    <!-- begin profile -->
-                    <div class="profile">
-                        <div class="profile-header">
-                            <!-- BEGIN profile-header-cover -->
-                            <div class="profile-header-cover"></div>
-                            <!-- END profile-header-cover -->
-                            <!-- BEGIN profile-header-content -->
-                            <div class="profile-header-content">
-                                <!-- BEGIN profile-header-img -->
-                                <div class="profile-header-img">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
-                                </div>
-                                <!-- END profile-header-img -->
-                                <!-- BEGIN profile-header-info -->
-                                <div class="profile-header-info">
-                                    <h4 class="m-t-10 m-b-5">Sean Ngu</h4>
-                                    <p class="m-b-10">UXUI + Frontend Developer</p>
-                                    <a href="#" class="btn btn-sm btn-info mb-2">Edit Profile</a>
-                                </div>
-                                <!-- END profile-header-info -->
+<div class="container p-0 bg-dark">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="content" class="content content-full-width">
+                <!-- begin profile -->
+                <div class="profile">
+                    <div class="profile-header">
+                        <!-- BEGIN profile-header-cover -->
+                        <div class="profile-header-cover"></div>
+                        <!-- END profile-header-cover -->
+                        <!-- BEGIN profile-header-content -->
+                        <div class="profile-header-content">
+                            <!-- BEGIN profile-header-img -->
+                            <div class="profile-header-img">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
                             </div>
-                            <!-- END profile-header-content -->
-                           
-                        </div>
-                    </div>
-                    <!-- end profile -->
+                            <!-- END profile-header-img -->
+                            <!-- BEGIN profile-header-info -->
+                            <div class="profile-header-info">
+                                <h4 class="m-t-10 m-b-5">Sean Ngu</h4>
+                                <div *ngIf="this.router.url !== '/home-usuario/tema/postagens' ;
+                                     then infoUsuario else infoTema">
+                                </div>
+                                <ng-template #infoUsuario>
+                                    <p class="m-b-10">UXUI + Frontend Developer</p>
+                                    <a class="btn btn-sm btn-info mb-2">Edit Profile</a>
+                                </ng-template>
+                                <ng-template #infoTema>
+                                    <p class="m-b-10"> Tema: Descrição Tema</p>
+                                    <a class="btn btn-sm btn-info mb-2">Edit Tema</a>
+                                </ng-template>
 
-        
+                                
+                            </div>
+                            <!-- END profile-header-info -->
+                        </div>
+                        <!-- END profile-header-content -->
+
+                    </div>
                 </div>
+                <!-- end profile -->
+
+
             </div>
         </div>
     </div>
+</div>
 
+<div class="container p-0">
+    <!-- BEGIN profile-header-tab -->
+    <ul class="col-md-12 profile-header-tab nav nav-tabs">
+        <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link active">
+                <i class="fa fa-rocket mr-2"></i> POSTS</a></li>
+        <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' class="nav-link">
+                <i class="fa fa-users mr-2 "></i>GRUPO</a>
+        </li>
+        <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link">
+                <i class="fa fa-list-alt mr-2"></i> TEMA
+            </a>
+        </li>
+        <li class="nav-item"><a routerLink='/home-usuario/pesquisa' class="nav-link">
+                <i class="fa fa-search mr-2"></i>PESQUISA</a>
+        </li>
 
-
+    </ul>
+    <!-- END profile-header-tab -->
+</div>
