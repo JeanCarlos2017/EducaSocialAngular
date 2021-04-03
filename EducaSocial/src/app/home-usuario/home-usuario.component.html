@@ -11,23 +11,27 @@
                         <!-- BEGIN profile-header-content -->
                         <div class="profile-header-content">
                             <!-- BEGIN profile-header-img -->
-                            <div class="profile-header-img">
+                            <div *ngIf="this.router.url !== '/home-usuario/tema/postagens'" class="profile-header-img">
                                 <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
                             </div>
                             <!-- END profile-header-img -->
                             <!-- BEGIN profile-header-info -->
-                            <div class="profile-header-info">
-                                <h4 class="m-t-10 m-b-5">Sean Ngu</h4>
+                            <div class="profile-header-info ">
                                 <div *ngIf="this.router.url !== '/home-usuario/tema/postagens' ;
                                      then infoUsuario else infoTema">
                                 </div>
                                 <ng-template #infoUsuario>
+                                    <h4 class="m-t-10 m-b-5">Sean Ngu</h4>
                                     <p class="m-b-10">UXUI + Frontend Developer</p>
                                     <a class="btn btn-sm btn-info mb-2">Edit Profile</a>
                                 </ng-template>
                                 <ng-template #infoTema>
-                                    <p class="m-b-10"> Tema: Descrição Tema</p>
-                                    <a class="btn btn-sm btn-info mb-2">Edit Tema</a>
+                                    <div class="row d-flex justify-content-center">
+                                        <h4 class="m-t-10 m-b-5 text-center">Tema: Descrição Tema</h4>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <a class="btn btn-sm btn-info mb-2">Edit Tema</a>
+                                    </div>
                                 </ng-template>
 
                                 
