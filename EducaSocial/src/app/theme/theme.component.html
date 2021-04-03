@@ -1,0 +1,108 @@
+<app-home-usuario></app-home-usuario>
+
+<div class="container p-0">
+    <!-- BEGIN profile-header-tab -->
+    <ul class="col-md-12 profile-header-tab nav nav-tabs">
+        <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link">POSTS</a></li>
+        <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' class="nav-link">GRUPO</a>
+        </li>
+        <li class="nav-item"><a router-link='/home-usuario/tema' class="nav-link active">TEMA</a>
+        </li>
+        <li class="nav-item"><a href="" class="nav-link">VIDEOS</a>
+        </li>
+
+    </ul>
+    <!-- END profile-header-tab -->
+</div>
+<!-- fim menu -->
+
+
+<!-- Temas existentes -->
+<div class="container mt-4">
+    <div class="row">
+        <h2> Sugestão de temas que temos para você!</h2>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+        <!-- card para criar novos grupos -->
+        <div class="col mt-2 ">
+            <div class="card d-flex ">
+                <img class="card-img-top h-50 w-50" src="https://i.imgur.com/ZH5HmAF.png" alt="Card image cap">
+                <div class="card-body">
+                    <button class="btn btn-success" data-toggle="modal" data-target="#modalCriaGrupo">Crie seu
+                        tema</button>
+                </div>
+            </div>
+        </div>
+        <!-- fim card criar grupo -->
+
+        <div class="col mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title m-0">Titulo postagem</h5>
+                    <small class="text-muted"> Tema: tema da postagem</small>
+                    <p class="card-text mt-3">texto da postagem</p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            data da postagem
+                        </small>
+                    </p>
+                    <p><small class="text-muted">by Criador</small></p>
+                    <a routerLink='/grupo-home' class="btn btn-success">Entrar </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title m-0">Titulo postagem</h5>
+                    <small class="text-muted"> Tema: tema da postagem</small>
+                    <p class="card-text mt-3">texto da postagem</p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            data da postagem
+                        </small>
+                    </p>
+                    <p><small class="text-muted">by Criador</small></p>
+                    <a class="text-info">Editar </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title m-0">Titulo postagem</h5>
+                    <small class="text-muted"> Tema: tema da postagem</small>
+                    <p class="card-text mt-3">texto da postagem</p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            data da postagem
+                        </small>
+                    </p>
+                    <p><small class="text-muted">by Criador</small></p>
+                    <a class="text-info">Editar </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col mt-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title m-0">Titulo postagem</h5>
+                    <small class="text-muted"> Tema: tema da postagem</small>
+                    <p class="card-text mt-3">texto da postagem</p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            data da postagem
+                        </small>
+                    </p>
+                    <p><small class="text-muted">by Criador</small></p>
+                    <a class="text-info">Editar </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
