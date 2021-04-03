@@ -7,6 +7,11 @@
 .bg-escuro{
     background-color: black
 }
+
+.bg-camarada{
+    background-color: #054f77;
+}
+
 body{
     background-color:#343a40;
 }
