@@ -4,6 +4,7 @@ import { FeedPostagemComponent } from './feed-postagem/feed-postagem.component';
 import { GroupComponent } from './group/group.component';
 import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
+import { SearchComponent } from './search/search.component';
 import { ThemeComponent } from './theme/theme.component';
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path:'home-usuario/tema', 
     component: ThemeComponent
+  },
+  {
+    path:'home-usuario/pesquisa', 
+    component: SearchComponent
   }
   
 ];

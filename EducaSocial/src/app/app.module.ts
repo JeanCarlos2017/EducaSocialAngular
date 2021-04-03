@@ -8,6 +8,7 @@ import { FeedPostagemComponent } from './feed-postagem/feed-postagem.component';
 import { GroupComponent } from './group/group.component';
 import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
 import { ThemeComponent } from './theme/theme.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ThemeComponent } from './theme/theme.component';
     FeedPostagemComponent,
     GroupComponent,
     HomeGrupoComponent,
-    ThemeComponent
+    ThemeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
