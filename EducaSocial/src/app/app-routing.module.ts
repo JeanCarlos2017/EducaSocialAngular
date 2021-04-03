@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FeedPostagemComponent } from './feed-postagem/feed-postagem.component';
 import { GroupComponent } from './group/group.component';
 import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
+import { HomeTemaComponent } from './home-tema/home-tema.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
 import { SearchComponent } from './search/search.component';
 import { ThemeComponent } from './theme/theme.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path:'home-usuario/pesquisa', 
     component: SearchComponent
+  }, 
+  {
+    path:"home-usuario/tema/postagens",
+    component: HomeTemaComponent
   }
   
 ];
