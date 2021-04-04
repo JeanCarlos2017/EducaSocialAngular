@@ -1,4 +1,4 @@
-<div class="container p-0 bg-dark">
+<div class="container-fluid p-0 bg-dark">
     <div class="row">
         <div class="col-md-12">
             <div id="content" class="content content-full-width">
@@ -57,16 +57,16 @@
                                      then postPopular else postTema">
         </div>
         <ng-template #postPopular>
-            <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link active">
+            <li class="nav-item"><a routerLink='/home-usuario/posts' routerLinkActive="active" class="nav-link ">
                     <i class="fa fa-rocket mr-2"></i> POSTS</a></li>
-            <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' class="nav-link">
+            <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' routerLinkActive="active" class="nav-link">
                     <i class="fa fa-users mr-2 "></i>GRUPO</a>
             </li>
-            <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link">
+            <li class="nav-item"><a routerLink='/home-usuario/tema' routerLinkActive="active" class="nav-link">
                     <i class="fa fa-list-alt mr-2"></i> TEMA
                 </a>
             </li>
-            <li class="nav-item"><a routerLink='/home-usuario/pesquisa' class="nav-link">
+            <li class="nav-item"><a routerLink='/home-usuario/pesquisa' routerLinkActive="active" class="nav-link">
                     <i class="fa fa-search mr-2"></i>PESQUISA</a>
             </li>
 
