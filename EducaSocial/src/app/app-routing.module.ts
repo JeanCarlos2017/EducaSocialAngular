@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { EntrarComponent } from './entrar/entrar.component';
 import { FeedPostagemComponent } from './feed-postagem/feed-postagem.component';
 import { GroupComponent } from './group/group.component';
 import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
@@ -11,8 +13,12 @@ import { ThemeComponent } from './theme/theme.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home-usuario/posts', 
+    redirectTo: '/entrar', 
     pathMatch: 'full'
+  },
+  {
+    path: 'entrar',
+    component: EntrarComponent
   },
   {
     'path': 'home-usuario/posts',
@@ -41,6 +47,10 @@ const routes: Routes = [
   {
     path: 'grupo-home/posts',
     component: FeedPostagemComponent
+  },
+  {
+    path:'cadastrar',
+    component: CadastrarComponent
   }
   
 ];
