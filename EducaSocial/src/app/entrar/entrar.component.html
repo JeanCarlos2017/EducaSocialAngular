@@ -30,7 +30,7 @@
 
                 <!--button-->
                 <div class="config-button config-text-extra">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block config-button">ENTRAR</button>
+                    <button (click)='entrar()' type="button" class="btn btn-secondary btn-lg btn-block config-button">ENTRAR</button>
                 </div>
                 <!--/button-->
 
@@ -42,7 +42,7 @@
         <div class="config-text-extra">
             <div class="p-t-57 p-b-20 p-t-30">
                 <span class="txt1">
-                    Não tem uma conta? <a class="efeito-link" href="#">cadastre-se</a>
+                    Não tem uma conta? <a routerLink='/cadastrar' class="efeito-link">cadastre-se</a>
                 </span>
             </div>
             <!--/link para cadastro pelo sistema-->
