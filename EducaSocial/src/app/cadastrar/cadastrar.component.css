@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+.title-font {
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+.container-login{
+    width: 100%;  
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+
+.form-login{
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px;
+    font-family: "Anton";
+    font-size: 26px;
+    color:#054f77;
+}
+
+.font-form-group{
+    font-size: 12px;
+    font-family: "Poppins"; 
+}
+
+/*estilo para "dados dentro do form*/
+.config-text-form{
+    font-family: "Poppins-Bold";
+    font-size: 10px;
+    color:#808080;
+    font-family: "Poppins"; 
+
+}
+
+/*estilo para "lembrar-me" e "Ou faça login com"*/
+.config-text-extra{
+    font-family: "Calibri";
+    font-size: 10px;
+    color:#808080;
+    text-align: center; 
+    margin-top: 10px;
+    font-family:"Poppins"; 
+}
+
+/*estilo para efeito hover do button*/
+.config-button{
+    background-image:linear-gradient(to right,#043f5f,#054f77,#87ceeb);
+    width: 100%;
+    border-radius:30px;
+    padding: 3px;
+    color:white;
+    border:0px;
+    outline:0;
+    box-shadow: none;
+    font-family:"Poppins"; 
+    font-size: 14px;
+
+}
+
+/*estilo para efeito hover do button - reverse*/
+.config-button:hover{
+    background-image:linear-gradient(to right,#87ceeb,#054f77,#043f5f);
+    border:0px;
+    outline: 0;
+    box-shadow: none;
+}
+
+/*margim e padding*/
+.mt-0 {
+    margin-top:0px
+}
+
+.mt-5 {
+    margin-top:5px
+}
+
+.mt-20 {
+    margin-top:20px
+}
+
+.mt-25 {
+    margin-top:25px
+}
+
+.mt-30 {
+    margin-top:30px
+}
+
+.mt-40 {
+    margin-top:40px
+}
+
+.p-0 {
+    padding:0px;
+  }
+
+.mb-0 {
+    margin-bottom: 0px;
+}
+
+/*estilo para link "cadastre-se*/
+.efeito-link:hover{
+   
+    color: #FFF; background-color:#26688c;
+    border-radius: 15px;
+    padding: 2px; 
+}
