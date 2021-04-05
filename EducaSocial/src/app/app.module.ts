@@ -12,6 +12,8 @@ import { SearchComponent } from './search/search.component';
 import { HomeTemaComponent } from './home-tema/home-tema.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { PilaresComponent } from './pilares/pilares.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     HomeTemaComponent,
     EntrarComponent,
     CadastrarComponent
+    PilaresComponent
   ],
   imports: [
     BrowserModule,
