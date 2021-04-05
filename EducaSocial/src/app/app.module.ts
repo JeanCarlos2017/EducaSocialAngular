@@ -10,6 +10,7 @@ import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
 import { ThemeComponent } from './theme/theme.component';
 import { SearchComponent } from './search/search.component';
 import { HomeTemaComponent } from './home-tema/home-tema.component';
+import { PilaresComponent } from './pilares/pilares.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HomeTemaComponent } from './home-tema/home-tema.component';
     HomeGrupoComponent,
     ThemeComponent,
     SearchComponent,
-    HomeTemaComponent
+    HomeTemaComponent,
+    PilaresComponent
   ],
   imports: [
     BrowserModule,
