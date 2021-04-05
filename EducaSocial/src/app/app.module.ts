@@ -13,6 +13,7 @@ import { HomeTemaComponent } from './home-tema/home-tema.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { PilaresComponent } from './pilares/pilares.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 
 @NgModule({
@@ -26,8 +27,9 @@ import { PilaresComponent } from './pilares/pilares.component';
     SearchComponent,
     HomeTemaComponent,
     EntrarComponent,
-    CadastrarComponent
-    PilaresComponent
+    CadastrarComponent,
+    PilaresComponent,
+    SobreNosComponent
   ],
   imports: [
     BrowserModule,
