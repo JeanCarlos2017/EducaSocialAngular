@@ -27,7 +27,7 @@ export class HomeUsuarioComponent implements OnInit {
     this.codigo_usuario= environment.codigo_usuario;
     this.nome_usuario= environment.nome;
 
-    if(this.authService.logado()){
+    if(!this.authService.logado()){
       this.router.navigate(['/entrar']);
     }
   }

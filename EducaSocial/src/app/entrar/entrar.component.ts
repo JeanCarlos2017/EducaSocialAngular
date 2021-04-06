@@ -27,7 +27,6 @@ export class EntrarComponent implements OnInit {
     this.authService.entrar(this.userLogin).subscribe( (resp: UserLogin) =>{
         this.userLogin= resp;
 
-        console.log(this.userLogin);
         //pegando as variáveis e deixando-as global 
         environment.id= this.userLogin.id;
         environment.nome= this.userLogin.nome;
