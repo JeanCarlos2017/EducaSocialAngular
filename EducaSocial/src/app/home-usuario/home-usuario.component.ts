@@ -14,7 +14,7 @@ export class HomeUsuarioComponent implements OnInit {
   url_foto:string;
   codigo_usuario: number;
   nome_usuario: string;
-  constructor( private router: Router, 
+  constructor( public router: Router, 
             private authService: AuthService, 
              private title: Title) { }
 

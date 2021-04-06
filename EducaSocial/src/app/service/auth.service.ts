@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule} from '@angular/common/http'
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
 import { UserLogin } from '../models/userLogin';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,14 @@ export class AuthService {
 
   entrar(userLogin: UserLogin): Observable<UserLogin>{
     return this.http.post<UserLogin>('http://localhost:8080/usuario/login', userLogin);
+  }
+
+  logado(){
+    let ok: boolean = false;
+
+    if(environment.token != ''){
+      ok= true;
+    }
+    return ok;
   }
 }
