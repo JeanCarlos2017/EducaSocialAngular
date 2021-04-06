@@ -15,11 +15,11 @@
 
             <div class="config-text-form mt-40">
                 <div class="form-group">
-                    <input type="email" class="form-control border-0 shadow p-3 mb-3 bg-white rounded font-form-group"
-                        id="email" aria-describedby="email" placeholder="digite seu e-mail" name='comment' required>
+                    <input [(ngModel)]="userLogin.nome" type="nome" class="form-control border-0 shadow p-3 mb-3 bg-white rounded font-form-group"
+                        id="nome" aria-describedby="nome" placeholder="digite seu nome" name='comment' required>
                 </div>
                 <div class="form-group">
-                    <input type="password"
+                    <input [(ngModel)]="userLogin.senha" type="password"
                         class="form-control border-0 shadow p-3 mb-3 bg-white rounded p-t-5 font-form-group" id="senha"
                         placeholder="digite sua senha" name='comment' required>
                 </div>
