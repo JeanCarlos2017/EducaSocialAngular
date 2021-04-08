@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
 
 @Injectable({
@@ -24,4 +25,7 @@ export class TemaService {
     return this.httpClient.post<Tema>('http://localhost:8080/tema/cadastrar', tema, this.token);
   }
 
+  buscaPostagensDoTema(idTema: number): Observable<Postagem[]>{
+    return this.httpClient.get<Postagem[]>(`http://localhost:8080/tema/buscar/${idTema}/postagens`, this.token);
+  }
 }

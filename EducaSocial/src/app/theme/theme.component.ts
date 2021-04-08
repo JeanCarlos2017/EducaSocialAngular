@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
 import { TemaService } from '../service/tema.service';
 
@@ -42,5 +43,14 @@ export class ThemeComponent implements OnInit {
       this.tema= new Tema();
       this.findAllTema(); //atualizo a lista de temas 
     })
+  }
+
+  entrar(idTema: number, categoria: string){
+    this.temaService.buscaPostagensDoTema(idTema).subscribe( (resp: Postagem[]) =>{
+      environment.postagem= resp;
+      environment.descricaoTema= categoria;
+      this.router.navigate(['/home-usuario/tema/postagens']);
+     });
+
   }
 }

@@ -1,3 +1,5 @@
+import { Postagem } from "src/app/models/Postagem";
+
 export const environment = {
   production: true,
   token: '',
@@ -5,5 +7,7 @@ export const environment = {
   id: 0,
   foto: '',
   codigo_usuario: 0,
+  postagem: {}, 
+  descricaoTema: '',
 
 };

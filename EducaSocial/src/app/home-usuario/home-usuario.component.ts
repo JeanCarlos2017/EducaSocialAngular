@@ -14,6 +14,7 @@ export class HomeUsuarioComponent implements OnInit {
   url_foto:string;
   codigo_usuario: number;
   nome_usuario: string;
+  descricaoTema: string;
   constructor( public router: Router, 
             private authService: AuthService, 
              private title: Title) { }
@@ -29,6 +30,12 @@ export class HomeUsuarioComponent implements OnInit {
 
     if(!this.authService.logado()){
       this.router.navigate(['/entrar']);
+    }
+
+    if(environment.descricaoTema === ''){
+      this.descricaoTema= "Descrição Tema"
+    }else{
+      this.descricaoTema= environment.descricaoTema
     }
   }
 

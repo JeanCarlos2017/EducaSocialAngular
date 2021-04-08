@@ -25,7 +25,7 @@
             <div class="card ">
                 <div class="card-body ">
                     <p class="card-text mt-3">{{ tema.categoria}}</p>
-                    <a routerLink='/home-usuario/tema/postagens' class="btn btn-success">Entrar </a>
+                    <button (click)='entrar(tema.id_tema, tema.categoria)' class="btn btn-success">Entrar </button>
                 </div>
             </div>
         </div>
