@@ -1,32 +1,9 @@
 <app-home-usuario *ngIf="this.router.url !== '/grupo-home/posts' "></app-home-usuario>
 <app-home-grupo *ngIf="this.router.url === '/grupo-home/posts' "></app-home-grupo>
 
-<div class="container p-0">
-    <!-- BEGIN profile-header-tab -->
-    <!-- <ul class="col-md-12 profile-header-tab nav nav-tabs">
-        <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link active">
-                <i class="fa fa-rocket mr-2"></i> POSTS</a></li>
-        <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' class="nav-link">
-                <i class="fa fa-users mr-2 "></i>GRUPO</a>
-        </li>
-        <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link">
-                <i class="fa fa-list-alt mr-2"></i> TEMA
-            </a>
-        </li>
-        <li class="nav-item"><a routerLink='/home-usuario/pesquisa' class="nav-link">
-                <i class="fa fa-search mr-2"></i>PESQUISA</a>
-        </li>
-
-    </ul> -->
-    <!-- END profile-header-tab -->
-</div>
-
-
 <div class="container bg-claro">
     <div class="row d-flex justify-content-center bg-white mt-4">
         <!-- crie sua postagen -->
-
-
         <div class="card-body ">
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
@@ -34,9 +11,9 @@
                         <label class="sr-only" for="message">post</label>
                         <textarea class="form-control" id="message" rows="3"
                             placeholder="O que você você está pensando?"></textarea>
+                    </div>
                 </div>
-            </div>
-                
+
             </div>
             <div class="btn-toolbar justify-content-between">
                 <div class="btn-group">
@@ -58,15 +35,15 @@
 
         <!-- Post /////-->
     </div>
-    
+
     <div class="row d-flex justify-content-center bg-white mt-4">
         <!-- begin timeline -->
-        <ul class="timeline">
-            <li>
+        <ul class="timeline w-100">
+            <li *ngFor='let post of postagemDoTema' class="w-100">
                 <!-- begin timeline-time -->
                 <div class="timeline-time">
-                    <span class="date">today</span>
-                    <span class="time">04:20</span>
+                    <span class="date">{{ post.data_postagem | date: 'dd/MM/yy' }}</span>
+                    <span class="time">{{ post.data_postagem | date: 'h:mm a' }}</span>
                 </div>
                 <!-- end timeline-time -->
                 <!-- begin timeline-icon -->
@@ -76,18 +53,18 @@
                 <!-- end timeline-icon -->
                 <!-- begin timeline-body -->
                 <div class="timeline-body">
-                    <div class="timeline-header">
-                        <span class="userimage"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"
-                                alt=""></span>
-                        <span class="username"><a href="javascript:;">Sean Ngu</a>
+                   
+
+                    <div class="timeline-header" >
+                        <span class="userimage"><img src= {{post.usuario.url_foto}}
+                                alt="" class="h-100 w-100"></span>
+                        <span class="username"><a href="javascript:;">{{post.usuario.nome}}</a>
                             <small></small></span>
                         <span class="pull-right text-muted">18 Views</span>
                     </div>
                     <div class="timeline-content">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus
-                            turpis quis tincidunt luctus.
-                            Nam sagittis dui in nunc consequat, in imperdiet nunc sagittis.
+                            {{ post.conteudo }}
                         </p>
                     </div>
                     <div class="timeline-likes">

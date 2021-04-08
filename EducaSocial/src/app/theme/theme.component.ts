@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
+import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class ThemeComponent implements OnInit {
 
   constructor(private temaService: TemaService, 
               private title: Title,
-              private router: Router) { }
+              private router: Router, 
+              private postagemService: PostagemService) { }
 
  ngOnInit(): void {
   window.scroll(0,0);
@@ -47,7 +49,7 @@ export class ThemeComponent implements OnInit {
 
   entrar(idTema: number, categoria: string){
     this.temaService.buscaPostagensDoTema(idTema).subscribe( (resp: Postagem[]) =>{
-      environment.postagem= resp;
+      this.postagemService.setPostagens(resp);
       environment.descricaoTema= categoria;
       this.router.navigate(['/home-usuario/tema/postagens']);
      });
