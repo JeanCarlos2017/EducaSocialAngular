@@ -23,7 +23,7 @@ export class FeedPostagemComponent implements OnInit {
   temaAtual: Tema = new Tema();
 
   //para editar tema
-  postEditado: Postagem= new Postagem();
+  postEditado: Postagem = new Postagem();
   userId: number;
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class FeedPostagemComponent implements OnInit {
     }
     this.getPostagemAtual();
     this.parsePostagem();
-    this.userId= environment.id;
+    this.userId = environment.id;
   }
 
 
@@ -43,7 +43,7 @@ export class FeedPostagemComponent implements OnInit {
           post.usuario = new User();
           post.usuario.nome = "Desconhecido";
           post.usuario.url_foto = "https://i.imgur.com/i3cXlrq.png";
-          post.usuario.id_usuario= -1;
+          post.usuario.id_usuario = -1;
         }
         if (post.usuario.url_foto === null) {
           post.usuario.url_foto = "https://i.imgur.com/i3cXlrq.png";
@@ -57,44 +57,46 @@ export class FeedPostagemComponent implements OnInit {
     if (this.router.url === '/home-usuario/tema/postagens') {
       //faço uma postagem para um tema específico
       this.temaAtual.id_tema = environment.idTema;
-      this.novaPostagem.temaList= new Array();
+      this.novaPostagem.temaList = new Array();
       this.novaPostagem.temaList.push(this.temaAtual)
       //faço a chamada no service 
-      this.postagemService.postPostagem(this.novaPostagem).subscribe ( (resp: Postagem)=>{
-        this.novaPostagem= resp;
+      this.postagemService.postPostagem(this.novaPostagem).subscribe((resp: Postagem) => {
+        this.novaPostagem = resp;
         alert("post cadastrado com sucesso");
         this.postagemDoTema.push(this.novaPostagem);
-        this.novaPostagem= new Postagem();
+        this.novaPostagem = new Postagem();
       })
     }
 
   }
 
-  
-  getPostagemAtual(){
+
+  getPostagemAtual() {
     this.postagemDoTema = this.postagemService.getPostagens();
   }
- 
-  setPostagemEdit(post: Postagem){
-    this.postEditado= post;
-  }
-  
-  editar(){
-    const index= this.postagemDoTema.indexOf(this.postEditado);
-    this.postagemService.putPostagem(this.postEditado).subscribe( (resp: Postagem)=>{
-      this.postEditado= resp;
-    });
-    this.postagemDoTema[index]= this.postEditado;
+
+  setPostagemEdit(post: Postagem) {
+    this.postEditado = post;
   }
 
-  apagar(post: Postagem){
-    const index= this.postagemDoTema.indexOf(post); 
-    console.log(this.postagemDoTema);
-    this.postagemService.deletePostagem(post.id_postagem).subscribe( ()=>{
-      this.postagemDoTema.splice(index, 1);
-      console.log(this.postagemDoTema);
-    })
+  editar() {
+    if (this.router.url === '/home-usuario/tema/postagens') {
+      const index = this.postagemDoTema.indexOf(this.postEditado);
+      this.postagemService.putPostagem(this.postEditado).subscribe((resp: Postagem) => {
+        this.postEditado = resp;
+      });
+      this.postagemDoTema[index] = this.postEditado;
+    }
   }
-  
+
+  apagar(post: Postagem) {
+    if (this.router.url === '/home-usuario/tema/postagens') {
+      const index = this.postagemDoTema.indexOf(post);
+      this.postagemService.deletePostagem(post.id_postagem).subscribe(() => {
+        this.postagemDoTema.splice(index, 1);
+      })
+    }
+  }
+
 
 }
