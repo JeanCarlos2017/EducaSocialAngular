@@ -6,19 +6,21 @@
         <!-- crie sua postagen -->
         <div class="card-body ">
             <div class="form-group">
-                <input [(ngModel)]="novaPostagem.titulo" type="text" class="form-control" id="inputTitulo" placeholder="Titulo">
+                <input [(ngModel)]="novaPostagem.titulo" type="text" class="form-control" id="inputTitulo"
+                    placeholder="Titulo">
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                     <div class="form-group">
                         <label class="sr-only" for="message">post</label>
-                        <textarea [(ngModel)]= "novaPostagem.conteudo" class="form-control" id="message" rows="3"
+                        <textarea [(ngModel)]="novaPostagem.conteudo" class="form-control" id="message" rows="3"
                             placeholder="O que você você está pensando?"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <input [(ngModel)]="novaPostagem.imagem" type="text" class="form-control" id="einputImagem" placeholder="Imagem">
+                <input [(ngModel)]="novaPostagem.imagem" type="text" class="form-control" id="einputImagem"
+                    placeholder="Imagem">
             </div>
             <div class="btn-toolbar justify-content-between">
                 <div class="btn-group">
@@ -46,30 +48,43 @@
         <ul class="timeline w-100">
             <li *ngFor='let post of postagemDoTema' class="w-100">
                 <!-- begin timeline-time -->
-                <div class="timeline-time">
+                <div class="timeline-time ">
                     <span class="date">{{ post.data_postagem | date: 'dd/MM/yy' }}</span>
                     <span class="time">{{ post.data_postagem | date: 'h:mm a' }}</span>
                 </div>
                 <!-- end timeline-time -->
                 <!-- begin timeline-icon -->
-                <div class="timeline-icon">
+                <div class="timeline-icon d-none d-sm-block">
                     <a href="javascript:;">&nbsp;</a>
                 </div>
                 <!-- end timeline-icon -->
                 <!-- begin timeline-body -->
                 <div class="timeline-body">
-                   
 
-                    <div class="timeline-header" >
-                        <span class="userimage"><img src= {{post.usuario.url_foto}}
-                                alt="" class="h-100 w-100"></span>
+
+                    <div class="timeline-header">
+                        <span class="userimage"><img src={{post.usuario.url_foto}} alt="" class="h-100 w-100"></span>
                         <span class="username"><a href="javascript:;">{{post.usuario.nome}}</a>
-                            <small></small></span>
-                        <span class="pull-right text-muted">18 Views</span>
+                        </span>
+                        <span *ngIf= "userId === post.usuario.id_usuario" class="pull-right text-muted"><button
+                                class="btn btn-secondary dropdown-toggle d-flex justify-content-end" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="fa fa-cogs"></i>
+                            </button>
+
+                            <!-- menu dropdown -->
+                            <div class="dropdown-menu mr-2" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" (click)="setPostagemEdit(post)" data-toggle="modal" data-target="#modalEdit">Editar </a>
+                                <a class="dropdown-item" (click)="apagar(post.id_postagem)">Apagar</a>
+                            </div>
+                        </span>
+
+                        
                     </div>
                     <div class="timeline-content">
                         <p>
-                           <b>{{ post.titulo }} </b>
+                            <b>{{ post.titulo }} </b>
                         </p>
                     </div>
                     <div class="timeline-content">
@@ -77,7 +92,7 @@
                             {{ post.conteudo }}
                         </p>
                     </div>
-                    <img src= {{post.imagem}}  alt="" class="h-100 w-100">
+                    <img src={{post.imagem}} alt="" class="h-100 w-100">
                     <div class="timeline-likes">
 
                         <div class="stats">
@@ -128,3 +143,48 @@
     </div>
     <!-- end tab-content -->
 </div>
+
+
+<!-- modal edit     -->
+
+<!-- Modal -->
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <!-- crie sua postagen -->
+        <div class="card-body ">
+            <div class="form-group">
+                <input [(ngModel)]="postEditado.titulo" type="text" class="form-control" id="inputTituloEdit"
+                    placeholder="Titulo">
+            </div>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="postsEdit" role="tabpanel" aria-labelledby="posts-tab">
+                    <div class="form-group">
+                        <label class="sr-only" for="message">post</label>
+                        <textarea [(ngModel)]="postEditado.conteudo" class="form-control" id="messageEdit" rows="3"
+                            placeholder="O que você você está pensando?"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="postEditado.imagem" type="text" class="form-control" id="inputImagemEdit"
+                    placeholder="Imagem">
+            </div>
+           
+        </div>
+
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button (click)="editar()" type="button" class="btn btn-primary" data-dismiss="modal">Altera postagem</button>
+        </div>
+      </div>
+    </div>
+  </div>

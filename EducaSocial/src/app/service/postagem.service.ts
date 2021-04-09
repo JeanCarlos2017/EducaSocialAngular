@@ -11,23 +11,27 @@ export class PostagemService {
 
   constructor(private httpClient: HttpClient) { }
 
-  token= {
+  token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
-  
-  id_usuario: number= environment.id;
+
+  id_usuario: number = environment.id;
 
   postagensAtual: Postagem[];
 
-  getPostagens(){
+  getPostagens() {
     return this.postagensAtual;
   }
 
-  setPostagens(postagens: Postagem[]){
-    this.postagensAtual= postagens;
+  setPostagens(postagens: Postagem[]) {
+    this.postagensAtual = postagens;
   }
 
-  postPostagem(post: Postagem ): Observable<Postagem>{
+  postPostagem(post: Postagem): Observable<Postagem> {
     return this.httpClient.post<Postagem>(`http://localhost:8080/usuario/${this.id_usuario}/postagem/cadastrar`, post, this.token);
+  }
+
+  putPostagem(post: Postagem): Observable<Postagem> {
+    return this.httpClient.put<Postagem>(`http://localhost:8080/usuario/${this.id_usuario}/postagem/alterar/${post.id_postagem}`, post, this.token);
   }
 }

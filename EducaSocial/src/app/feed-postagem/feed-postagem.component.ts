@@ -22,6 +22,9 @@ export class FeedPostagemComponent implements OnInit {
   novaPostagem: Postagem = new Postagem();
   temaAtual: Tema = new Tema();
 
+  //para editar tema
+  postEditado: Postagem= new Postagem();
+  userId: number;
 
   ngOnInit() {
     if (environment.token === '') {
@@ -29,7 +32,7 @@ export class FeedPostagemComponent implements OnInit {
     }
     this.getPostagemAtual();
     this.parsePostagem();
-
+    this.userId= environment.id;
   }
 
 
@@ -40,6 +43,7 @@ export class FeedPostagemComponent implements OnInit {
           post.usuario = new User();
           post.usuario.nome = "Desconhecido";
           post.usuario.url_foto = "https://i.imgur.com/i3cXlrq.png";
+          post.usuario.id_usuario= -1;
         }
         if (post.usuario.url_foto === null) {
           post.usuario.url_foto = "https://i.imgur.com/i3cXlrq.png";
@@ -71,6 +75,21 @@ export class FeedPostagemComponent implements OnInit {
     this.postagemDoTema = this.postagemService.getPostagens();
   }
  
+  setPostagemEdit(post: Postagem){
+    this.postEditado= post;
+  }
+  
+  editar(){
+    let index= this.postagemDoTema.indexOf(this.postEditado);
+    this.postagemService.putPostagem(this.postEditado).subscribe( (resp: Postagem)=>{
+      this.postEditado= resp;
+    });
+    this.postagemDoTema[index]= this.postEditado;
+  }
+
+  apagar(id: number){
+
+  }
   
 
 }
