@@ -51,8 +51,9 @@ export class ThemeComponent implements OnInit {
     this.temaService.buscaPostagensDoTema(idTema).subscribe( (resp: Postagem[]) =>{
       this.postagemService.setPostagens(resp);
       environment.descricaoTema= categoria;
+      environment.idTema= idTema;
       this.router.navigate(['/home-usuario/tema/postagens']);
-     });
+    });
 
   }
 }

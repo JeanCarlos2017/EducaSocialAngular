@@ -7,6 +7,8 @@ export const environment = {
   id: 0,
   foto: '',
   codigo_usuario: 0,
+  //dados do tema atual
   descricaoTema: '',
+  idTema: 0,
 
 };

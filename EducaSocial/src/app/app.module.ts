@@ -18,6 +18,7 @@ import { PilaresComponent } from './pilares/pilares.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     BrowserModule,
     AppRoutingModule, 
     FormsModule,
-    HttpClientModule 
+    HttpClientModule, 
+
   ],
   providers: [],
   bootstrap: [AppComponent]
