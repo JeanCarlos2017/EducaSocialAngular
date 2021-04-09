@@ -80,15 +80,20 @@ export class FeedPostagemComponent implements OnInit {
   }
   
   editar(){
-    let index= this.postagemDoTema.indexOf(this.postEditado);
+    const index= this.postagemDoTema.indexOf(this.postEditado);
     this.postagemService.putPostagem(this.postEditado).subscribe( (resp: Postagem)=>{
       this.postEditado= resp;
     });
     this.postagemDoTema[index]= this.postEditado;
   }
 
-  apagar(id: number){
-
+  apagar(post: Postagem){
+    const index= this.postagemDoTema.indexOf(post); 
+    console.log(this.postagemDoTema);
+    this.postagemService.deletePostagem(post.id_postagem).subscribe( ()=>{
+      this.postagemDoTema.splice(index, 1);
+      console.log(this.postagemDoTema);
+    })
   }
   
 

@@ -34,4 +34,9 @@ export class PostagemService {
   putPostagem(post: Postagem): Observable<Postagem> {
     return this.httpClient.put<Postagem>(`http://localhost:8080/usuario/${this.id_usuario}/postagem/alterar/${post.id_postagem}`, post, this.token);
   }
+
+  deletePostagem(id_postagem: number) {
+    return this.httpClient.delete(`http://localhost:8080/usuario/${this.id_usuario}/postagem/deletar/${id_postagem}`, this.token);
+  }
+
 }
