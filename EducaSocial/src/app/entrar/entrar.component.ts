@@ -35,7 +35,7 @@ export class EntrarComponent implements OnInit {
         environment.token= this.userLogin.token;
         
         //informo o usuário e o redireciono
-        this.router.navigate(['/home-usuario/posts']);
+        this.router.navigate(['/home-usuario/tema']);
         alert('usuario logado com sucesso!');
 
     }, erro =>{

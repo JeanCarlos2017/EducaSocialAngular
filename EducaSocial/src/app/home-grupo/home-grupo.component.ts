@@ -11,6 +11,7 @@ export class HomeGrupoComponent implements OnInit {
   constructor(public router: Router) { }
 
   ngOnInit(): void {
+    window.scroll(0,0);
   }
 
 }

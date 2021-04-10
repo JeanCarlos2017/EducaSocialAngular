@@ -20,10 +20,7 @@ const routes: Routes = [
     path: 'entrar',
     component: EntrarComponent
   },
-  {
-    'path': 'home-usuario/posts',
-    component: FeedPostagemComponent
-  }, 
+  
   {
     'path': 'home-usuario/grupo-usuario',
     component: GroupComponent
