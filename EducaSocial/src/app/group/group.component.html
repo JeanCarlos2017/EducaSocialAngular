@@ -1,26 +1,5 @@
 <app-home-usuario></app-home-usuario>
 
-<!-- div de menu -->
-<div class="container p-0">
-    <!-- BEGIN profile-header-tab -->
-    <!-- <ul class="col-md-12 profile-header-tab nav nav-tabs">
-        <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link ">
-            <i class="fa fa-rocket mr-2"></i> POSTS</a></li>
-        <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' class="nav-link active"> 
-            <i class="fa fa-users mr-2 "></i>GRUPO</a>
-        </li>
-        <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link"> 
-            <i class="fa fa-list-alt mr-2"></i> TEMA
-        </a>
-        </li>
-        <li class="nav-item"><a routerLink='/home-usuario/pesquisa' class="nav-link">
-            <i class="fa fa-search mr-2"></i>PESQUISA</a>
-        </li>
-    </ul> -->
-    <!-- END profile-header-tab -->
-</div>
-<!-- fim div menu -->
-
 <!-- Grupos criados por voce -->
 <div class="container mt-4">
     <div class="row m-2">
@@ -40,75 +19,19 @@
         </div>
         <!-- fim card criar grupo -->
 
-        <div class="col mt-2">
+        <!-- listagem  de grupos criados por voce -->
+        <div class="col mt-2" *ngFor='let grupo of grupoCriadoPorVoce'>
             <div class="card d-flex  align-items-center ">
+                <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
+                <h4 class="text-center"> {{grupo.nome}} </h4>
+                <p><small class="text-muted">{{grupo.descricao}}</small></p>
                 <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <button class="btn btn-info mr-4" data-toggle="modal" data-target="#modalEditarGrupo">Editar
-                    </button>
-                    <a routerLink='/grupo-home' class="btn btn-success">Entrar </a>
+                    <a class="btn btn-info mr-2">Editar </a>
+                    <button (click)= "entrar(grupo)" class="btn btn-success">Entrar </button>
                 </div>
             </div>
         </div>
-
-        <div class="col mt-2">
-            <div class="card d-flex  align-items-center ">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col mt-2">
-            <div class="card d-flex  align-items-center ">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col mt-2">
-            <div class="card d-flex  align-items-center ">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
-                </div>
-            </div>
-        </div>
+        <!-- fim listagem de grupos criados por você -->
     </div>
     <hr>
 </div>
@@ -118,56 +41,19 @@
     <div class="row m-2 ">
         <h2 class="display-4 text-center"> Grupos que você participa! </h2>
     </div>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col mt-2">
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+        <!-- listagem  de grupos criados por voce -->
+        <div class="col mt-2" *ngFor='let grupo of grupoParticipante'>
             <div class="card d-flex  align-items-center ">
+                <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
+                <h4 class="text-center"> {{grupo.nome}} </h4>
+                <p><small class="text-muted">{{grupo.descricao}}</small></p>
                 <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
+                    <a (click)= "entrar(grupo)" class="btn btn-success">Entrar </a>
                 </div>
             </div>
         </div>
-
-        <div class="col mt-2">
-            <div class="card d-flex  align-items-center ">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col mt-2">
-            <div class="card d-flex  align-items-center ">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                </div>
-            </div>
-        </div>
-
+        <!-- fim listagem de grupos criados por você -->
     </div>
     <hr>
 </div>
@@ -207,10 +93,10 @@
 
                     <div class="input-group mb-3">
                         <select class="custom-select" id="selectTema" name="selectTema">
-                          <option selected>Selecione um tema</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                            <option selected>Selecione um tema</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
                     </div>
 
@@ -256,13 +142,13 @@
                             placeholder="foto capa">
                     </div>
 
-                   
+
                     <div class="input-group mb-3">
                         <select class="custom-select" id="selectTema" name="selectTema">
-                          <option selected>Selecione um tema</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                            <option selected>Selecione um tema</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
                         </select>
                     </div>
 

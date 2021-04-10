@@ -12,13 +12,13 @@
                         <div class="profile-header-content">
                             <!-- BEGIN profile-header-img -->
                             <div  class="profile-header-img">
-                                <img src="https://i.imgur.com/XkVRjlM.png" alt="">
+                                <img [src]="fotoPerfil" alt="">
                             </div>
                             <!-- END profile-header-img -->
                             <!-- BEGIN profile-header-info -->
                             <div class="profile-header-info ">
-                                    <h4 class="m-t-10 m-b-5">Nome do Grupo</h4>
-                                    <p class="m-b-10">Descrição do Grupo</p>
+                                    <h4 class="m-t-10 m-b-5">Nome: {{nome}}</h4>
+                                    <p class="m-b-10">Descrição: {{descricao}}</p>
                                     <a class="btn btn-sm btn-info mb-2">Edit Group</a>
                                </div>
                             <!-- END profile-header-info -->
@@ -41,7 +41,7 @@
         <li class="nav-item"><a routerLink='/grupo-home/posts' class="nav-link active">
                 <i class="fa fa-rocket mr-2"></i> POSTS</a>
         </li>
-        <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link">
+        <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link">
             <i class="fa fa-backward mr-2"></i> VOLTAR</a>
         </li>
     </ul>

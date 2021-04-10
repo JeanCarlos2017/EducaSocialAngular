@@ -12,7 +12,7 @@
                         <div class="profile-header-content">
                             <!-- BEGIN profile-header-img -->
                             <div *ngIf="this.router.url !== '/home-usuario/tema/postagens'" class="profile-header-img">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                                <img [src]= "url_foto" alt="" class="w-100 h-100">
                             </div>
                             <!-- END profile-header-img -->
                             <!-- BEGIN profile-header-info -->
@@ -21,13 +21,13 @@
                                      then infoUsuario else infoTema">
                                 </div>
                                 <ng-template #infoUsuario>
-                                    <h4 class="m-t-10 m-b-5">Sean Ngu</h4>
-                                    <p class="m-b-10">UXUI + Frontend Developer</p>
-                                    <a class="btn btn-sm btn-info mb-2">Edit Profile</a>
+                                    <h4 class="m-t-10 m-b-5">{{ nome_usuario }}</h4>
+                                    <p class="m-b-10">Código Usuário: {{ codigo_usuario}} </p>
+                                    <button class="btn btn-sm btn-info mb-2" disabled>Edit Profile</button>
                                 </ng-template>
                                 <ng-template #infoTema>
                                     <div class="row d-flex justify-content-center">
-                                        <h4 class="m-t-10 m-b-5 text-center mb-4">Tema: Descrição Tema</h4>
+                                        <h4 class="m-t-10 m-b-5 text-center mb-4">Tema: {{descricaoTema }}</h4>
                                     </div>
                                     <div class="row d-flex justify-content-center">
                                         <a class="btn btn-sm btn-info mb-2">Editar Tema</a>
@@ -57,16 +57,14 @@
                                      then postPopular else postTema">
         </div>
         <ng-template #postPopular>
-            <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link active">
-                    <i class="fa fa-rocket mr-2"></i> POSTS</a></li>
-            <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' class="nav-link">
+            <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' routerLinkActive="active" class="nav-link">
                     <i class="fa fa-users mr-2 "></i>GRUPO</a>
             </li>
-            <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link">
+            <li class="nav-item"><a routerLink='/home-usuario/tema' routerLinkActive="active" class="nav-link">
                     <i class="fa fa-list-alt mr-2"></i> TEMA
                 </a>
             </li>
-            <li class="nav-item"><a routerLink='/home-usuario/pesquisa' class="nav-link">
+            <li class="nav-item"><a routerLink='/home-usuario/pesquisa' routerLinkActive="active" class="nav-link">
                     <i class="fa fa-search mr-2"></i>PESQUISA</a>
             </li>
 
@@ -74,7 +72,7 @@
         <ng-template #postTema>
             <li class="nav-item"><a routerLink='/home-usuario/tema/postagens' class="nav-link active">
                     <i class="fa fa-rocket mr-2"></i> POSTS</a></li>
-            <li class="nav-item"><a routerLink='/home-usuario/posts' class="nav-link active">
+            <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link">
                 <i class="fa fa-backward mr-2"></i> VOLTAR</a></li>
         </ng-template>
 
