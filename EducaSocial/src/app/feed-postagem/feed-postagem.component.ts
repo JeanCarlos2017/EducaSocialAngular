@@ -125,13 +125,10 @@ export class FeedPostagemComponent implements OnInit {
   }
 
   apagar(post: Postagem) {
-    if (this.router.url === '/home-usuario/tema/postagens') {
       const index = this.postagemDoTema.indexOf(post);
       this.postagemService.deletePostagem(post.id_postagem).subscribe(() => {
         this.postagemDoTema.splice(index, 1);
       })
-    }
-
   }
 
   parseComentario(comentarioList: Comentario[]) {
@@ -161,7 +158,7 @@ export class FeedPostagemComponent implements OnInit {
 
 
   publicarComentario(post: Postagem) {
-    if (this.router.url === '/home-usuario/tema/postagens') {
+    
       const index = this.postagemDoTema.indexOf(post);
       this.addUsuarioAoComentario(this.comentarioNovo);
       //acrescento um comentário a postagem
@@ -178,7 +175,7 @@ export class FeedPostagemComponent implements OnInit {
         this.comentarioNovo = new Comentario();
         console.log()
       });
-    }
+    
   }
 
   //para o grupo 
