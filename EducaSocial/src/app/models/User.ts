@@ -1,3 +1,5 @@
+import { Grupo } from "./Grupo";
+
 export class User{
     public id_usuario: number;
 	public email: string;
@@ -5,4 +7,6 @@ export class User{
 	public nome: string;
 	public url_foto: string;
 	public codigo_usuario: string;
+	public gruposCriadoPeloUsuario: Grupo[];
+	public gruposUsuarioParticipa: Grupo[];
 }

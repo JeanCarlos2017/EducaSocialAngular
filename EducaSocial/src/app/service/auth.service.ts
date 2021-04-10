@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule} from '@angular/common/http'
 import { User } from '../models/user';
 import { Observable } from 'rxjs';
-import { UserLogin } from '../models/userLogin';
+import { UserLogin } from '../models/UserLogin';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -18,6 +18,10 @@ export class AuthService {
 
   entrar(userLogin: UserLogin): Observable<UserLogin>{
     return this.http.post<UserLogin>('http://localhost:8080/usuario/login', userLogin);
+  }
+
+  buscaUsuarioPorId(id: number){
+    return this.http.get<User>(`http://localhost:8080/usuario/buscaPorId/${id}`);
   }
 
   logado(){

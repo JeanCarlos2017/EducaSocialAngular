@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { UserLogin } from '../models/userLogin';
+import { UserLogin } from '../models/UserLogin';
 import { AuthService } from '../service/auth.service';
 
 @Component({
