@@ -4,7 +4,7 @@
 <div class="container bg-claro">
     <div class="row d-flex justify-content-center bg-white mt-4">
         <!-- crie sua postagen -->
-        <div class="card-body ">
+        <div *ngIf="this.router.url!== '/home-usuario/posts' " class="card-body" >
             <div class="form-group">
                 <input [(ngModel)]="novaPostagem.titulo" type="text" class="form-control" id="inputTitulo"
                     placeholder="Titulo">
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <!-- Post /////-->
+        <!-- cim criar postagem  /////-->
     </div>
 
     <div class="row d-flex justify-content-center bg-white mt-4">
@@ -117,14 +117,15 @@
 
                     </div>
                     <div class="timeline-comment-box">
-                        <div class="user"><img src="https://bootdey.com/img/Content/avatar/avatar3.png"></div>
+                        <div class="row d-flex justify-content-start">
+                        <div class="user"><img src={{userFoto}}></div>
                         <div class="input">
-                            <form action="">
+                            <form action="" >
                                 <div class="input-group">
-                                    <input type="text" class="form-control rounded-corner"
+                                    <input  [(ngModel)]= "comentarioNovo.texto" name="comentario" type="text" class="form-control rounded-corner"
                                         placeholder="Write a comment...">
                                     <span class="input-group-btn p-l-10">
-                                        <button class="btn btn-primary f-s-12 rounded-corner" type="button">
+                                        <button (click)= "publicarComentario(post)"class="btn btn-primary f-s-12 rounded-corner" type="button">
                                             <i class="fa fa-paper-plane"></i>
                                         </button>
                                     </span>
@@ -132,6 +133,20 @@
                             </form>
                         </div>
                     </div>
+                    </div>
+                    <!-- lista de comentários da postagem  -->
+                    <div *ngFor="let comentario of post.comentarioList "class="timeline-comment-box">
+                        <div class="user"><img src={{comentario.foto}}></div>
+                        <div class="input">
+                            <form action="">
+                                <div class="input-group">
+                                    <p> {{comentario.texto}} </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- fim lista de comentários  -->
                 </div>
                 <!-- end timeline-body -->
             </li>
