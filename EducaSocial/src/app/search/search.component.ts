@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Grupo } from '../models/Grupo';
+import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
 import { GrupoService } from '../service/grupo.service';
+import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -12,7 +16,9 @@ import { TemaService } from '../service/tema.service';
 export class SearchComponent implements OnInit {
 
   constructor(private temaService: TemaService, 
-              private grupoService: GrupoService) { }
+              private grupoService: GrupoService, 
+              private postagemService: PostagemService, 
+              private router: Router) { }
 
   //listagem de tema 
   temaPesquisado: Tema[];
@@ -40,7 +46,12 @@ export class SearchComponent implements OnInit {
   }
 
   entrarTema(idTema: number, descricao: string){
-
+    this.temaService.buscaPostagensDoTema(idTema).subscribe( (resp: Postagem[]) =>{
+      this.postagemService.setPostagens(resp);
+      environment.descricaoTema= descricao;
+      environment.idTema= idTema;
+      this.router.navigate(['/home-usuario/tema/postagens']);
+    });
   }
 
   buscaGrupo(){
