@@ -28,7 +28,6 @@ export class HomeGrupoComponent implements OnInit {
 
   buscaGrupo() {
     this.idGrupo= environment.idGrupo;
-    console.log(this.idGrupo);
     this.grupoService.buscarGrupoPorId(this.idGrupo).subscribe((resp: Grupo) => {
       this.nome = resp.nome;
       this.descricao = resp.descricao;

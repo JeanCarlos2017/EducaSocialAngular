@@ -1,9 +1,10 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
- 
+
 
 import { environment } from 'src/environments/environment.prod';
 import { Comentario } from '../models/Comentario';
+import { Grupo } from '../models/Grupo';
 import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
 import { User } from '../models/user';
@@ -21,7 +22,7 @@ export class FeedPostagemComponent implements OnInit {
 
   constructor(public router: Router,
     private postagemService: PostagemService,
-    private comentarioService: ComentarioService, 
+    private comentarioService: ComentarioService,
     private grupoService: GrupoService) { }
 
   postagemDoTema: Postagem[];
@@ -34,10 +35,12 @@ export class FeedPostagemComponent implements OnInit {
   userFoto: string;
 
   //para fazer o comentario 
-  comentarioNovo: Comentario = new Comentario(); 
-  
+  comentarioNovo: Comentario = new Comentario();
+
   //para quando estiver no grupo
-  
+  grupo: Grupo;
+  temasDoGrupo: Tema[] = new Array();
+
 
   ngOnInit() {
     if (environment.token === '') {
@@ -47,6 +50,13 @@ export class FeedPostagemComponent implements OnInit {
     this.parsePostagem();
     this.userId = environment.id;
     this.userFoto = environment.foto;
+
+    if (this.router.url === '/grupo-home/posts') {
+      //pego o grupo e seus temas 
+      this.buscaGrupoPorId();
+      this.buscaGrupoTemasDoGrupo();
+    }
+
   }
 
 
@@ -84,17 +94,14 @@ export class FeedPostagemComponent implements OnInit {
         alert("post cadastrado com sucesso");
         this.postagemDoTema.push(this.novaPostagem);
         this.novaPostagem = new Postagem();
-      })
-    }else if(this.router.url === '/grupo-home/posts'){
+      });
+
+    } else if (this.router.url === '/grupo-home/posts') {
       //coloco os temas do grupo na postagem 
-      this.novaPostagem.temaList = new Array();
-
-      //cadastro a postagem 
-
-
-      //vinculo a postagem com o grupo
+      this.addPostagemAoGrupo(this.novaPostagem);
 
     }
+
 
   }
 
@@ -144,15 +151,15 @@ export class FeedPostagemComponent implements OnInit {
     }
   }
 
-  addUsuarioAoComentario(comentario: Comentario){
-     //colocar os dados do usuário no comentário 
-     this.comentarioNovo.usuario= new User();
-     this.comentarioNovo.usuario.id_usuario= environment.id;
-     this.comentarioNovo.usuario.nome= environment.nome;
-     this.comentarioNovo.foto= environment.foto;
+  addUsuarioAoComentario(comentario: Comentario) {
+    //colocar os dados do usuário no comentário 
+    this.comentarioNovo.usuario = new User();
+    this.comentarioNovo.usuario.id_usuario = environment.id;
+    this.comentarioNovo.usuario.nome = environment.nome;
+    this.comentarioNovo.foto = environment.foto;
   }
 
- 
+
   publicarComentario(post: Postagem) {
     if (this.router.url === '/home-usuario/tema/postagens') {
       const index = this.postagemDoTema.indexOf(post);
@@ -168,11 +175,35 @@ export class FeedPostagemComponent implements OnInit {
         this.postagemDoTema[index].comentarioList.push(this.comentarioNovo);
 
         //limpo o comentário
-       this.comentarioNovo= new Comentario();
-       console.log()
+        this.comentarioNovo = new Comentario();
+        console.log()
       });
-     }
+    }
   }
 
-  
+  //para o grupo 
+  buscaGrupoPorId() {
+    const idGrupo = environment.id;
+    this.grupoService.buscarGrupoPorId(idGrupo).subscribe((resp: Grupo) => {
+      this.grupo = resp;
+    })
+  }
+
+  buscaGrupoTemasDoGrupo() {
+    const idGrupo = environment.id;
+    this.grupoService.buscaTemaDoGrupo(idGrupo).subscribe((resp: Tema[]) => {
+      this.temasDoGrupo = resp;
+    })
+  }
+
+  addPostagemAoGrupo(post: Postagem) {
+    const idGrupo = environment.idGrupo;
+    console.log(idGrupo)
+    this.grupoService.addPostagemAoGrupo(idGrupo, post).subscribe((resp: Postagem) => {
+      this.novaPostagem = resp;
+      alert("post cadastrado com sucesso");
+      this.postagemDoTema.push(this.novaPostagem);
+      this.novaPostagem = new Postagem();
+    })
+  }
 }

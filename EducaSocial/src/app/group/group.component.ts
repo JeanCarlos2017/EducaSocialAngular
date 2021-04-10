@@ -44,8 +44,10 @@ export class GroupComponent implements OnInit {
   entrar(grupo: Grupo){
     //definindo as variáveis de ambiente 
     environment.idGrupo= grupo.id_grupo;
+    console.log(grupo.id_grupo)
     this.grupoService.buscaPostagemDoGrupo(grupo.id_grupo).subscribe( (resp: Postagem[])=>{
       //defindindo as postagens do grupo 
+      console.log(resp)
       this.postagemService.setPostagens(resp);
       this.router.navigate(['/grupo-home/posts']);
     })

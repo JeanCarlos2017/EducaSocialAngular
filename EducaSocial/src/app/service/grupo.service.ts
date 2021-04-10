@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Grupo } from '../models/Grupo';
 import { Postagem } from '../models/Postagem';
+import { Tema } from '../models/Tema';
 import { PostagemService } from './postagem.service';
 
 @Injectable({
@@ -33,5 +34,14 @@ export class GrupoService {
 
   buscarGrupoPorId(idGrupo: number): Observable<Grupo>{
     return this.httpClient.get<Grupo>(`http://localhost:8080/usuario/${this.idUser}/grupo/busca/id/${idGrupo}`, this.token);
+  }
+
+  buscaTemaDoGrupo(idGrupo: number): Observable<Tema[]>{
+    return this.httpClient.get<Tema[]>(`http://localhost:8080/usuario/${this.idUser}/grupo/busca-tema/id/${idGrupo}`, this.token);
+  }
+
+  addPostagemAoGrupo(idGrupo:number, post: Postagem): Observable<Postagem>{
+    console.log(idGrupo)
+    return this.httpClient.post<Postagem>(`http://localhost:8080/usuario/${this.idUser}/grupo/${idGrupo}/add-postagem`, post, this.token);
   }
 }
