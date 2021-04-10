@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Grupo } from '../models/Grupo';
+import { Postagem } from '../models/Postagem';
+import { PostagemService } from './postagem.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,10 @@ export class GrupoService {
   }
 
   buscarGrupoPorNome(descricao: string): Observable<Grupo[]>{
-    console.log(descricao);
     return this.httpClient.get<Grupo[]>(`http://localhost:8080/usuario/${this.idUser}/grupo/busca/${descricao}`, this.token);
+  }
+
+  buscaPostagemDoGrupo(id_grupo: number):Observable<Postagem[]>{
+   return this.httpClient.get<Postagem[]>(`http://localhost:8080/usuario/${this.idUser}/grupo/${id_grupo}/listar/postagem`, this.token);
   }
 }

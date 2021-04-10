@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Grupo } from '../models/Grupo';
+import { Postagem } from '../models/Postagem';
 import { User } from '../models/user';
 import { AuthService } from '../service/auth.service';
 import { GrupoService } from '../service/grupo.service';
+import { PostagemService } from '../service/postagem.service';
 
 @Component({
   selector: 'app-group',
@@ -13,7 +16,9 @@ import { GrupoService } from '../service/grupo.service';
 export class GroupComponent implements OnInit {
 
   constructor(private grupoService: GrupoService, 
-              private authService: AuthService) { }
+              private authService: AuthService, 
+              private router: Router, 
+              private postagemService: PostagemService) { }
   
   //listage de grupo participante e grupo criado
   userId: number;
@@ -36,5 +41,18 @@ export class GroupComponent implements OnInit {
     });
   }
 
-
+  entrar(grupo: Grupo){
+    this.grupoService.buscaPostagemDoGrupo(grupo.id_grupo).subscribe( (resp: Postagem[])=>{
+      //defindindo as postagens do grupo 
+      this.postagemService.setPostagens(resp);
+      //definindo as variáveis de ambiente 
+      environment.idGrupo= grupo.id_grupo;
+      environment.descricaoGrupo= grupo.descricao;
+      environment.fotoCapaGrupo= grupo.fotoCapa;
+      environment.fotoPerfilGrupo= grupo.fotoPerfil;
+      environment.nome= grupo.nome;
+    
+      this.router.navigate(['/grupo-home/posts']);
+    })
+  }
 }

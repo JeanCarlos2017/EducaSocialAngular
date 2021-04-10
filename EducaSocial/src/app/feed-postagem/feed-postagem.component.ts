@@ -32,7 +32,10 @@ export class FeedPostagemComponent implements OnInit {
   userFoto: string;
 
   //para fazer o comentario 
-  comentarioNovo: Comentario = new Comentario();  
+  comentarioNovo: Comentario = new Comentario(); 
+  
+  //para quando estiver no grupo
+  
 
   ngOnInit() {
     if (environment.token === '') {

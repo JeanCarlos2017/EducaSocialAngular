@@ -10,5 +10,12 @@ export const environment = {
   //dados do tema atual
   descricaoTema: '',
   idTema: 0,
-
+ 
+  //dados do grupo atual 
+  idGrupo: 0, 
+  descricaoGrupo: '',
+  nomeGrupo: '',
+  fotoPerfilGrupo: '',
+  fotoCapaGrupo: '',
+  
 };
