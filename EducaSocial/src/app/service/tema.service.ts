@@ -28,4 +28,8 @@ export class TemaService {
   buscaPostagensDoTema(idTema: number): Observable<Postagem[]>{
     return this.httpClient.get<Postagem[]>(`http://localhost:8080/tema/buscar/${idTema}/postagens`, this.token);
   }
+
+  buscaTemaPorDescricao(descricao: string): Observable<Tema[]>{
+    return this.httpClient.get<Tema[]>(`http://localhost:8080/tema/busca-descricao/${descricao}`, this.token)
+  }
 }
