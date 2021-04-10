@@ -39,97 +39,23 @@
             <div class="input-group-prepend ">
                 <span class="input-group-text bg-primary" id="basic-addon1"><i class="fa fa-search"></i></span>
             </div>
-            <input type="text" class="form-control" placeholder="pesquisa por grupo" aria-label="Username"
+            <input [(ngModel)]="descricaoGrupo" name="descricaoGrupo" (keyup)="buscaGrupo()" type="text" class="form-control" placeholder="pesquisa por grupo" aria-label="Username"
                 aria-describedby="basic-addon1">
         </div>
     </form>
     <hr>
-    <div class="row">
-        <div class="col mt-2">
-            <div class="card">
+    <!-- seção que mostra os grupo -->
+    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+        <div class="col mt-2" *ngFor='let grupo of grupoPesquisado'>
+            <div class="card d-flex  align-items-center ">
+                <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
+                <h4 class="text-center"> {{grupo.nome}} </h4>
+                <p><small class="text-muted">{{grupo.descricao}}</small></p>
                 <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a routerLink='/grupo-home' class="btn btn-success">Entrar </a>
+                    <a class="btn btn-success mr-2">Entrar </a>
                 </div>
             </div>
         </div>
-
-        <div class="col mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col mt-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title m-0">Titulo postagem</h5>
-                    <small class="text-muted"> Tema: tema da postagem</small>
-                    <p class="card-text mt-3">texto da postagem</p>
-                    <p class="card-text">
-                        <small class="text-muted">
-                            data da postagem
-                        </small>
-                    </p>
-                    <p><small class="text-muted">by Criador</small></p>
-                    <a class="text-info">Editar </a>
-                </div>
-            </div>
-        </div>
-
     </div>
     <hr>
 </div>
