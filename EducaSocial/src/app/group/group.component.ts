@@ -50,7 +50,7 @@ export class GroupComponent implements OnInit {
       environment.descricaoGrupo= grupo.descricao;
       environment.fotoCapaGrupo= grupo.fotoCapa;
       environment.fotoPerfilGrupo= grupo.fotoPerfil;
-      environment.nome= grupo.nome;
+      environment.nomeGrupo= grupo.nome;
     
       this.router.navigate(['/grupo-home/posts']);
     })
