@@ -30,4 +30,8 @@ export class GrupoService {
   buscaPostagemDoGrupo(id_grupo: number):Observable<Postagem[]>{
    return this.httpClient.get<Postagem[]>(`http://localhost:8080/usuario/${this.idUser}/grupo/${id_grupo}/listar/postagem`, this.token);
   }
+
+  buscarGrupoPorId(idGrupo: number): Observable<Grupo>{
+    return this.httpClient.get<Grupo>(`http://localhost:8080/usuario/${this.idUser}/grupo/busca/id/${idGrupo}`, this.token);
+  }
 }

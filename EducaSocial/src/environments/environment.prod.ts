@@ -13,9 +13,6 @@ export const environment = {
  
   //dados do grupo atual 
   idGrupo: 0, 
-  descricaoGrupo: '',
-  nomeGrupo: '',
-  fotoPerfilGrupo: '',
-  fotoCapaGrupo: '',
+ 
   
 };

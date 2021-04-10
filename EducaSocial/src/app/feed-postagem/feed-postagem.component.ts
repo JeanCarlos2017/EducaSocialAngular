@@ -8,6 +8,7 @@ import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
 import { User } from '../models/user';
 import { ComentarioService } from '../service/comentario.service';
+import { GrupoService } from '../service/grupo.service';
 import { PostagemService } from '../service/postagem.service';
 
 
@@ -20,7 +21,8 @@ export class FeedPostagemComponent implements OnInit {
 
   constructor(public router: Router,
     private postagemService: PostagemService,
-    private comentarioService: ComentarioService) { }
+    private comentarioService: ComentarioService, 
+    private grupoService: GrupoService) { }
 
   postagemDoTema: Postagem[];
   novaPostagem: Postagem = new Postagem();
@@ -83,6 +85,15 @@ export class FeedPostagemComponent implements OnInit {
         this.postagemDoTema.push(this.novaPostagem);
         this.novaPostagem = new Postagem();
       })
+    }else if(this.router.url === '/grupo-home/posts'){
+      //coloco os temas do grupo na postagem 
+      this.novaPostagem.temaList = new Array();
+
+      //cadastro a postagem 
+
+
+      //vinculo a postagem com o grupo
+
     }
 
   }
