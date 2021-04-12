@@ -8,20 +8,21 @@
         <form>
 
             <!--titulo texto boas vindas-->
-            <div class="text-center">
-                Bem vindo ao Educa
+            <div class="text-center title-font font-weight-bold fs-6 ">
+                Bem-vindo ao EducaSocial!
             </div>
             <!--/titulo texto boas vindas-->
 
             <div class="config-text-form mt-40">
                 <div class="form-group">
-                    <input [(ngModel)]="userLogin.nome" type="nome" class="form-control border-0 shadow p-3 mb-3 bg-white rounded font-form-group"
-                        id="nome" aria-describedby="nome" placeholder="digite seu nome" name='comment' required>
+                    <input [(ngModel)]="userLogin.nome" type="nome"
+                        class="form-control border-0 shadow p-3 mb-3 bg-white rounded font-form-group" id="nome"
+                        aria-describedby="nome" placeholder="Digite seu nome" name='comment' required>
                 </div>
                 <div class="form-group">
                     <input [(ngModel)]="userLogin.senha" type="password"
                         class="form-control border-0 shadow p-3 mb-3 bg-white rounded p-t-5 font-form-group" id="senha"
-                        placeholder="digite sua senha" name='comment' required>
+                        placeholder="Digite sua senha" name='comment' required>
                 </div>
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input mb-0" id="exampleCheck1">
@@ -30,7 +31,8 @@
 
                 <!--button-->
                 <div class="config-button config-text-extra">
-                    <button (click)='entrar()' type="button" class="btn btn-secondary btn-lg btn-block config-button">ENTRAR</button>
+                    <button (click)='entrar()' type="button"
+                        class="btn btn-secondary btn-lg btn-block config-button title-font">ENTRAR</button>
                 </div>
                 <!--/button-->
 

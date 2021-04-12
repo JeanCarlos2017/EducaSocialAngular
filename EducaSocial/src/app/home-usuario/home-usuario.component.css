@@ -97,3 +97,13 @@
     color: #242a30
 }
 
+.cor {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,96,121,1) 55%, rgba(198,103,14,1) 69%);
+    
+}
+
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
