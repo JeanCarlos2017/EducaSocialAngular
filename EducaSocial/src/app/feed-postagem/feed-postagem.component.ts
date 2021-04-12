@@ -173,7 +173,6 @@ export class FeedPostagemComponent implements OnInit {
 
         //limpo o comentário
         this.comentarioNovo = new Comentario();
-        console.log()
       });
     
   }
