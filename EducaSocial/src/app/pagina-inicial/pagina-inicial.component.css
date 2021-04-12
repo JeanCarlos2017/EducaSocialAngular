@@ -1,0 +1,78 @@
+/* Fonte: ANTON */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.margem-b{
+    margin-bottom: 0%;
+}
+
+.margem-t{
+    margin-top: 0%;
+}
+.fonte{
+    font-family: 'Anton', sans-serif;
+}
+/* .fonte-texto{
+
+} */
+
+/* Padding jumbotrom */
+.p-j{
+    
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+/* padding */
+.p-75l{
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 0;
+}
+.p-75r{
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-top:0;
+}
+
+
+
+.f-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* CSS GABS */
+
+/*Tamanho usado nas frases de efeito*/ 
+.fs-28{
+    font-size: 28pt;
+}
+
+.fs-12{
+    font-size: 12pt;
+}
+
+.fs-45{
+    font-size: 45pt;
+}
+
+.dm{
+    height: 210px;
+}
+
+.Anton{
+    font-family: 'Anton', sans-serif;
+}
+/* Tamanho da imagen no carousel */
+.mg-sobre-nos{
+    width: 100%;
+    
+}
+
+.arial-naroow{
+    font-family: 'arial-naroow', sans-serif;
+}
