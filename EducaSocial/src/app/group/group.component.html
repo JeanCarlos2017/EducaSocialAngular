@@ -22,7 +22,7 @@
         <!-- listagem  de grupos criados por voce -->
         <div class="col mt-2" *ngFor='let grupo of grupoCriadoPorVoce'>
             <div class="card d-flex  align-items-center">
-                <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
+                <img class="card-img-top h-100 w-100" [src]="grupo.fotoPerfil" alt="Card image cap">
                 <h4 class="text-center font_n font-weight-bold"> {{grupo.nome}} </h4>
                 <p><small class="text-muted font_n font-weight-bold">{{grupo.descricao}}</small></p>
                 <div class="card-body">
