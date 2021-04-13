@@ -95,7 +95,7 @@
                             {{ post.conteudo }}
                         </p>
                     </div>
-                    <div>
+                    <div *ngIf="post.imagem !== ''">
                         <img src={{post.imagem}} alt="" class="h-100 w-100 m-0 p-0">
 
 
