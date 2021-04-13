@@ -16,6 +16,8 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { PilaresComponent } from './pilares/pilares.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { MenuComponent } from './menu/menu.component';
+import { RodapeComponent } from './rodape/rodape.component';
 
 
 
@@ -32,7 +34,9 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     EntrarComponent,
     CadastrarComponent,
     PilaresComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    MenuComponent,
+    RodapeComponent
   ],
   imports: [
     BrowserModule,
