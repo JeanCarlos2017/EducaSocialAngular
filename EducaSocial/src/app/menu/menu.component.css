@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+.fonte{
+
+    font-family: 'Anton', sans-serif;
+}
+
+
+.edu{
+    width: 200px;
+    font-size: 30px;
+    color: #054f77;
+}
+
+ul.br li{
+    display: inline;
+    padding: 30px;
+    font-size: 18px;
+   
+   
+
+}
+
+ul.br li a {
+    color: black;
+    
+    
+}
+
+
+
+
+
+h3{
+    color: #054f77;
+    font-size: 40px;
+}
+
+.border-bc{
+    
+    border-color:#054f77  ;
+}
+
+
+
+/* Barra de pesquisa*/
+.pesquisa{
+    width: 100%;
+    height: 38px;
+    
+    margin: 0px;
+   
+    font-size: 15px;
+  
+    padding: 0;
+    
+    padding-left: 0;
+   
+    
+    
+}
+
+.in{
+    padding-right: 50px;
+    height: 38px;
+    
+    margin: 0px ;
+    
+    padding: 20;
+
+}
+
+.bt-ps{
+    border: 0;
+    height: 38px;
+    
+}
+
+/* logo*/
+.mg{
+    width: 40px;
+    height: 40px;
+    
+}
+
+
