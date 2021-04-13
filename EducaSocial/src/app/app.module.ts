@@ -18,6 +18,7 @@ import { PilaresComponent } from './pilares/pilares.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { NavbarPaginaEstaticaComponent } from './navbar-pagina-estatica/navbar-pagina-estatica.component';
 
 
 
@@ -36,7 +37,8 @@ import { RodapeComponent } from './rodape/rodape.component';
     PilaresComponent,
     SobreNosComponent,
     MenuComponent,
-    RodapeComponent
+    RodapeComponent,
+    NavbarPaginaEstaticaComponent
   ],
   imports: [
     BrowserModule,
