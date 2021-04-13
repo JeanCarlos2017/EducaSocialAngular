@@ -1,0 +1,107 @@
+/* Fonte: ANTON */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+.fonte{
+    font-family: 'Anton', sans-serif;
+    
+}
+/* .fonte-texto{
+
+} */
+
+/* Padding jumbotrom */
+.p-j{
+    
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+/* padding */
+.p-50{
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-right: 50px;
+
+}
+
+
+
+
+.f-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* CSS GABS */
+
+/*Tamanho usado nas frases de efeito*/ 
+.fs-22{
+    font-size: 15pt;
+}
+
+.fs-12{
+    font-size: 12pt;
+}
+
+.fs-45{
+    font-size: 45pt;
+}
+
+.dm{
+    height: 210px;
+}
+
+.Anton{
+    font-family: 'Anton', sans-serif;
+}
+/* Tamanho da imagen no carousel */
+.mg-sobre-nos{
+    width: 100%;
+    
+}
+
+.arial-naroow{
+    font-family: 'arial-naroow', sans-serif;
+}
+
+/* Cores dos cards */
+/* amarelo */
+.bg-azul{
+    background-color: #054f77;
+}
+.t-azul{
+    color: #000000;
+    font-family: 'arial-naroow', sans-serif;
+}
+.bd-azul{
+    border-color:#ffffff;
+}
+
+/* laranja */
+.bg-laranja{
+    background-color: orange;
+}
+.t-laranja{
+ color: orange;
+}
+
+.bd-laranja{
+    border-color: orange;
+}
+
+/* roxo */
+.bg-roxo{
+    background-color: darkviolet;
+}
+.t-roxo{
+    color: darkviolet;
+}
+.bd-roxo{
+    border-color: darkviolet;
+}
