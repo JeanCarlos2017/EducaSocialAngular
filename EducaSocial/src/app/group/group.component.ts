@@ -25,6 +25,7 @@ export class GroupComponent implements OnInit {
   user: User= new User();
   grupoParticipante: Grupo[];
   grupoCriadoPorVoce: Grupo[];
+  novoGrupo: Grupo = new Grupo();
 
   ngOnInit(): void {
     window.scroll(0,0);
@@ -52,4 +53,14 @@ export class GroupComponent implements OnInit {
       this.router.navigate(['/grupo-home/posts']);
     })
   }
+
+  //cadastro de um novo grupo 
+  criarGrupo(){
+    this.grupoService.criaGrupo(this.novoGrupo).subscribe( (resp: Grupo)=>{
+      alert("Grupo criado com sucesso, boa sortee!");
+      this.grupoCriadoPorVoce.push(resp);
+    })
+  }
+  
+
 }

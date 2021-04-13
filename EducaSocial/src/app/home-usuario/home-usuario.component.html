@@ -9,7 +9,7 @@
                         <div class="profile-header-cover"></div>
                         <!-- END profile-header-cover -->
                         <!-- BEGIN profile-header-content -->
-                        <div class="profile-header-content">
+                        <div class="profile-header-content cor ">
                             <!-- BEGIN profile-header-img -->
                             <div *ngIf="this.router.url !== '/home-usuario/tema/postagens'" class="profile-header-img">
                                 <img [src]= "url_foto" alt="" class="w-100 h-100">
@@ -21,16 +21,16 @@
                                      then infoUsuario else infoTema">
                                 </div>
                                 <ng-template #infoUsuario>
-                                    <h4 class="m-t-10 m-b-5">{{ nome_usuario }}</h4>
-                                    <p class="m-b-10">Código Usuário: {{ codigo_usuario}} </p>
-                                    <button class="btn btn-sm btn-info mb-2" disabled>Edit Profile</button>
+                                    <h4 class="m-t-10 m-b-5  font_n">{{ nome_usuario }}</h4>
+                                    <p class="m-b-10  font_n">Código Usuário: {{ codigo_usuario}} </p>
+                                    <button class="btn btn-sm btn-info mb-2  font_n" disabled>Editar perfil</button>
                                 </ng-template>
                                 <ng-template #infoTema>
                                     <div class="row d-flex justify-content-center">
-                                        <h4 class="m-t-10 m-b-5 text-center mb-4">Tema: {{descricaoTema }}</h4>
+                                        <h4 class="m-t-10 m-b-5 text-center mb-4 font_n">Tema: {{descricaoTema }}</h4>
                                     </div>
                                     <div class="row d-flex justify-content-center">
-                                        <a class="btn btn-sm btn-info mb-2">Editar Tema</a>
+                                        <a class="btn btn-sm btn-info mb-2  font_n">Editar Tema</a>
                                     </div>
                                 </ng-template>
 
@@ -57,23 +57,23 @@
                                      then postPopular else postTema">
         </div>
         <ng-template #postPopular>
-            <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' routerLinkActive="active" class="nav-link">
-                    <i class="fa fa-users mr-2 "></i>GRUPO</a>
+            <li class="nav-item"><a routerLink='/home-usuario/grupo-usuario' routerLinkActive="active" class="nav-link font_n">
+                    <i class="fa fa-users mr-2"></i>Grupo</a>
             </li>
-            <li class="nav-item"><a routerLink='/home-usuario/tema' routerLinkActive="active" class="nav-link">
-                    <i class="fa fa-list-alt mr-2"></i> TEMA
+            <li class="nav-item "><a routerLink='/home-usuario/tema' routerLinkActive="active" class="nav-link font_n">
+                    <i class="fa fa-list-alt mr-2"></i> Tema
                 </a>
             </li>
-            <li class="nav-item"><a routerLink='/home-usuario/pesquisa' routerLinkActive="active" class="nav-link">
-                    <i class="fa fa-search mr-2"></i>PESQUISA</a>
+            <li class="nav-item"><a routerLink='/home-usuario/pesquisa' routerLinkActive="active" class="nav-link font_n">
+                    <i class="fa fa-search mr-2"></i>Pesquisa</a>
             </li>
 
         </ng-template>
         <ng-template #postTema>
-            <li class="nav-item"><a routerLink='/home-usuario/tema/postagens' class="nav-link active">
-                    <i class="fa fa-rocket mr-2"></i> POSTS</a></li>
-            <li class="nav-item"><a routerLink='/home-usuario/tema' class="nav-link">
-                <i class="fa fa-backward mr-2"></i> VOLTAR</a></li>
+            <li class="nav-item font_n"><a routerLink='/home-usuario/tema/postagens' class="nav-link active">
+                    <i class="fa fa-rocket mr-2"></i> Posts</a></li>
+            <li class="nav-item  font_n"><a routerLink='/home-usuario/tema' class="nav-link">
+                <i class="fa fa-backward mr-2"></i> Voltar</a></li>
         </ng-template>
 
 

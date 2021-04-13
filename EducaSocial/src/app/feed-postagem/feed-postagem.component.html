@@ -4,27 +4,27 @@
 <div class="container bg-claro">
     <div class="row d-flex justify-content-center bg-white mt-4">
         <!-- crie sua postagen -->
-        <div *ngIf="this.router.url!== '/home-usuario/posts' " class="card-body" >
+        <div *ngIf="this.router.url!== '/home-usuario/posts' " class="card-body">
             <div class="form-group">
-                <input [(ngModel)]="novaPostagem.titulo" type="text" class="form-control" id="inputTitulo"
+                <input [(ngModel)]="novaPostagem.titulo" type="text" class="form-control font_n" id="inputTitulo"
                     placeholder="Titulo">
             </div>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                     <div class="form-group">
-                        <label class="sr-only" for="message">post</label>
-                        <textarea [(ngModel)]="novaPostagem.conteudo" class="form-control" id="message" rows="3"
+                        <label class="sr-only font_n" for="message">post</label>
+                        <textarea [(ngModel)]="novaPostagem.conteudo" class="form-control font_n" id="message" rows="3"
                             placeholder="O que você você está pensando?"></textarea>
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <input [(ngModel)]="novaPostagem.imagem" type="text" class="form-control" id="einputImagem"
+                <input [(ngModel)]="novaPostagem.imagem" type="text" class="form-control font_n" id="einputImagem"
                     placeholder="Imagem">
             </div>
             <div class="btn-toolbar justify-content-between">
                 <div class="btn-group">
-                    <button (click)="publicar()" type="submit" class="btn btn-primary">Publicar</button>
+                    <button (click)="publicar()" type="submit" class="btn btn-primary font_n">Publicar</button>
                 </div>
                 <div class="btn-group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown"
@@ -45,7 +45,7 @@
 
     <div class="row d-flex justify-content-center bg-white mt-4">
         <!-- begin timeline -->
-        <ul class="timeline w-100">
+        <ul class="timeline w-100 font_n">
             <li *ngFor='let post of postagemDoTema' class="w-100">
                 <!-- begin timeline-time -->
                 <div class="timeline-time ">
@@ -63,10 +63,11 @@
 
 
                     <div class="timeline-header">
-                        <span class="userimage"><img src={{post.usuario.url_foto}} alt="" class="h-100 w-100"></span>
-                        <span class="username"><a href="javascript:;">{{post.usuario.nome}}</a>
+                        <span class="userimage font_n"><img src={{post.usuario.url_foto}} alt=""
+                                class="h-100 w-100"></span>
+                        <span class="username font_n"><a href="javascript:;">{{post.usuario.nome}}</a>
                         </span>
-                        <span *ngIf= "userId === post.usuario.id_usuario" class="pull-right text-muted"><button
+                        <span *ngIf="userId === post.usuario.id_usuario" class="pull-right text-muted"><button
                                 class="btn btn-secondary dropdown-toggle d-flex justify-content-end" type="button"
                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
@@ -75,25 +76,32 @@
 
                             <!-- menu dropdown -->
                             <div class="dropdown-menu mr-2" aria-labelledby="dropdownMenuButton">
-                                <a *ngIf="this.router.url !== '/grupo-home/posts'" class="dropdown-item" (click)="setPostagemEdit(post)" data-toggle="modal" data-target="#modalEdit">Editar </a>
-                                <a class="dropdown-item" (click)="apagar(post)">Apagar</a>
+                                <a *ngIf="this.router.url !== '/grupo-home/posts'" class="dropdown-item font_n"
+                                    (click)="setPostagemEdit(post)" data-toggle="modal" data-target="#modalEdit">Editar
+                                </a>
+                                <a class="dropdown-item font_n" (click)="apagar(post)">Apagar</a>
                             </div>
                         </span>
 
-                        
+
                     </div>
-                    <div class="timeline-content">
+                    <div class="timeline-content font_n">
                         <p>
                             <b>{{ post.titulo }} </b>
                         </p>
                     </div>
-                    <div class="timeline-content">
+                    <div class="timeline-content font_n">
                         <p>
                             {{ post.conteudo }}
                         </p>
                     </div>
-                    <img src={{post.imagem}} alt="" class="h-100 w-100">
-                    <div class="timeline-likes">
+                    <div *ngIf="post.imagem !== ''">
+                        <img src={{post.imagem}} alt="" class="h-100 w-100 m-0 p-0">
+
+
+                    </div>
+
+                    <!-- <div class="timeline-likes">
 
                         <div class="stats">
                             <span class="fa-stack fa-fw stats-icon">
@@ -106,46 +114,85 @@
                             </span>
                             <span class="stats-total">4.3k</span>
                         </div>
-                    </div>
-                    <div class="timeline-footer">
-                        <a href="javascript:;" class="m-r-15 text-inverse-lighter mr-2"><i
-                                class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i></a>
-                        <a href="javascript:;" class="m-r-15 text-inverse-lighter mr-2"><i
-                                class="fa fa-thumbs-down fa-fw fa-lg m-r-3"></i> </a>
-                        <a href="javascript:;" class="m-r-15 text-inverse-lighter mr-2"><i
-                                class="fa fa-comments fa-fw fa-lg m-r-3"></i></a>
+                    </div> -->
+                    <hr>
+                    <div class="timeline-footer m-0">
 
-                    </div>
-                    <div class="timeline-comment-box">
-                        <div class="row d-flex justify-content-start">
-                        <div class="user"><img src={{userFoto}}></div>
-                        <div class="input">
-                            <form action="" >
-                                <div class="input-group">
-                                    <input  [(ngModel)]= "comentarioNovo.texto" name="comentario" type="text" class="form-control rounded-corner"
-                                        placeholder="Write a comment...">
-                                    <span class="input-group-btn p-l-10">
-                                        <button (click)= "publicarComentario(post)"class="btn btn-primary f-s-12 rounded-corner" type="button">
-                                            <i class="fa fa-paper-plane"></i>
-                                        </button>
-                                    </span>
-                                </div>
-                            </form>
+                        <div class="row d-flex justify-content-around">
+
+                            <div class="row verde">
+                                <i class="fa fa-thumbs-up fa-fw fa-lg m-r-3"></i>
+                                <a href="javascript:;" class="m-r-15 text-inverse-lighter mr-2 d-none d-md-block pt-1
+                                ">Curtir</a>
+                            </div>
+                            <div class="row vermelho"><i class="fa fa-thumbs-down fa-fw fa-lg m-r-3"></i>
+                                <a href="javascript:;" class="m-r-15 text-inverse-lighter mr-2 pt-1 d-none d-md-block
+                                ">Descurtir</a>
+                            </div>
+                            <div class="row amarelo">
+                                <i class="fa fa-comments fa-fw fa-lg m-r-3"></i>
+                                <a href="javascript:;" class="m-r-15 text-inverse-lighter mr-2 pt-1 d-none d-md-block
+                                ">Comentar</a>
+                            </div>
+
                         </div>
-                    </div>
+
                     </div>
                     <!-- lista de comentários da postagem  -->
-                    <div *ngFor="let comentario of post.comentarioList "class="timeline-comment-box">
-                        <div class="user"><img src={{comentario.foto}}></div>
-                        <div class="input">
-                            <form action="">
-                                <div class="input-group">
-                                    <p> {{comentario.texto}} </p>
+                    <div>
+                        <p class="d-flex justify-content-end">
+                            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i> Ver mais
+                            </a>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body border-0">
+                                <div *ngFor="let comentario of post.comentarioList " class="timeline-comment-box">
+
+                                    <div class="user"><img class="h-100 w-100 bg-claro" src={{comentario.foto}}></div>
+                                    <span
+                                        class="user font_n ml-2 font-weight-bold bg-claro mr-5 justify-content-center">
+                                        {{comentario.usuario.nome}}</span>
+
+                                    <!-- <div class="input">
+                                    <form action="" class="">
+                                        <div class="input-group">
+                                            <p class="card-text"> {{comentario.texto}} </p>
+                                        </div>
+                                        <hr>
+                                    </form>
+                                </div> -->
+
+                                    <div>
+                                        <p>{{comentario.texto}}</p>
+                                    </div>
+                                    <hr>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
+
+                    <div class="timeline-comment-box bg-claro">
+                        <div class="row d-flex justify-content-center ">
+                            <div class="user"><img class=" w-100 h-100" src={{userFoto}}></div>
+                            <div class="input w-75">
+                                <form action="">
+                                    <div class="input-group">
+                                        <input [(ngModel)]="comentarioNovo.texto" name="comentario" type="text"
+                                            class="form-control rounded-corner" placeholder="Escreva um comentário...">
+                                        <span class="input-group-btn p-l-10">
+                                            <button (click)="publicarComentario(post)"
+                                                class="btn btn-primary f-s-12 rounded-corner" type="button">
+                                                <i class="fa fa-paper-plane"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <!-- fim lista de comentários  -->
                 </div>
                 <!-- end timeline-body -->
@@ -163,43 +210,45 @@
 <!-- modal edit     -->
 
 <!-- Modal -->
-<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-
-        <!-- crie sua postagen -->
-        <div class="card-body ">
-            <div class="form-group">
-                <input [(ngModel)]="postEditado.titulo" type="text" class="form-control" id="inputTituloEdit"
-                    placeholder="Titulo">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="postsEdit" role="tabpanel" aria-labelledby="posts-tab">
-                    <div class="form-group">
-                        <label class="sr-only" for="message">post</label>
-                        <textarea [(ngModel)]="postEditado.conteudo" class="form-control" id="messageEdit" rows="3"
-                            placeholder="O que você você está pensando?"></textarea>
+
+            <!-- crie sua postagen -->
+            <div class="card-body ">
+                <div class="form-group">
+                    <input [(ngModel)]="postEditado.titulo" type="text" class="form-control font_n" id="inputTituloEdit"
+                        placeholder="Titulo">
+                </div>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="postsEdit" role="tabpanel" aria-labelledby="posts-tab">
+                        <div class="form-group">
+                            <label class="sr-only" for="message">post</label>
+                            <textarea [(ngModel)]="postEditado.conteudo" class="form-control font_n" id="messageEdit"
+                                rows="3" placeholder="O que você você está pensando?"></textarea>
+                        </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <input [(ngModel)]="postEditado.imagem" type="text" class="form-control font_n" id="inputImagemEdit"
+                        placeholder="Imagem">
+                </div>
+
             </div>
-            <div class="form-group">
-                <input [(ngModel)]="postEditado.imagem" type="text" class="form-control" id="inputImagemEdit"
-                    placeholder="Imagem">
-            </div>
-           
-        </div>
 
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button (click)="editar()" type="button" class="btn btn-primary" data-dismiss="modal">Altera postagem</button>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button (click)="editar()" type="button" class="btn btn-primary font_n" data-dismiss="modal">Altera
+                    postagem</button>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
