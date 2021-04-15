@@ -19,6 +19,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { NavbarPaginaEstaticaComponent } from './navbar-pagina-estatica/navbar-pagina-estatica.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -38,13 +40,15 @@ import { NavbarPaginaEstaticaComponent } from './navbar-pagina-estatica/navbar-p
     SobreNosComponent,
     MenuComponent,
     RodapeComponent,
-    NavbarPaginaEstaticaComponent
+    NavbarPaginaEstaticaComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     FormsModule,
-    HttpClientModule, 
+    HttpClientModule,
+    ModalModule.forRoot() 
 
   ],
   providers: [],

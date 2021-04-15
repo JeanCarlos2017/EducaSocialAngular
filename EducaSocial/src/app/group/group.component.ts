@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Grupo } from '../models/Grupo';
 import { Postagem } from '../models/Postagem';
-import { User } from '../models/user';
+import { User } from '../models/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { GrupoService } from '../service/grupo.service';
 import { PostagemService } from '../service/postagem.service';
@@ -18,7 +19,8 @@ export class GroupComponent implements OnInit {
   constructor(private grupoService: GrupoService, 
               private authService: AuthService, 
               private router: Router, 
-              private postagemService: PostagemService) { }
+              private postagemService: PostagemService,
+              private alertas: AlertasService) { }
   
   //listage de grupo participante e grupo criado
   userId: number;
@@ -57,7 +59,7 @@ export class GroupComponent implements OnInit {
   //cadastro de um novo grupo 
   criarGrupo(){
     this.grupoService.criaGrupo(this.novoGrupo).subscribe( (resp: Grupo)=>{
-      alert("Grupo criado com sucesso, boa sortee!");
+      this.alertas.showAlertSuccess("Grupo criado com sucesso, boa sortee!");
       this.grupoCriadoPorVoce.push(resp);
     })
   }
