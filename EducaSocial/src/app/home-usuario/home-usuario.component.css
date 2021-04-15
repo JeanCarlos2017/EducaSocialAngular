@@ -98,12 +98,26 @@
 }
 
 .cor {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,96,121,1) 55%, rgba(198,103,14,1) 69%);
+    background: rgb(9,96,121);
+    background: linear-gradient(90deg, rgba(9,96,121,1) 56%, rgba(5,79,119,1) 100%, rgba(92,143,207,1) 100%);
+
+    /* background: rgb(35,48,182);
+background: linear-gradient(90deg, rgba(35,48,182,1) 0%, rgba(16,187,154,1) 52%, rgba(5,79,119,1) 100%); */
+
+/* background: rgb(35,48,182);
+background: linear-gradient(90deg, rgba(35,48,182,1) 0%, rgba(16,187,154,1) 41%, rgba(5,79,119,1) 70%); */
     
 }
 
 .font_n {
     font-family: 'Poppins', sans-serif;
     
+}
+
+.cr{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.round {
+    border-radius: 0px 15px;
 }

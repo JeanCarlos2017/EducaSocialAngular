@@ -4,7 +4,20 @@
 }
 
 .cor {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,96,121,1) 55%, rgba(198,103,14,1) 69%);
+    background: rgb(5,79,119);
+    background: linear-gradient(90deg, rgba(5,79,119,1) 0%, rgba(9,96,121,1) 56%, rgba(92,143,207,1) 100%);
     
+}
+
+.cr{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.round {
+    border-radius: 0px 15px;
+}
+
+.f{
+    position: relative;
+    z-index: 2;
 }

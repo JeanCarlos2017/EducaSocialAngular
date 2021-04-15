@@ -6,27 +6,29 @@
         <h2 class="display-4 text-center font font-weight-bold">Seus grupos</h2>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+    <div class="row row-cols-1 row-cols-md-5 g-4 cr h-50 round">
         <!-- card para criar novos grupos -->
-        <div class="col mt-2 ">
-            <div class="card d-flex  align-items-center ">
-                <img class="card-img-top h-100 w-100" src="https://i.imgur.com/ZH5HmAF.png" alt="Card image cap">
-                <div class="card-body">
-                    <button class="btn btn-success font_n" data-toggle="modal" data-target="#modalCriaGrupo">Crie seu
-                        grupo</button>
-                </div>
+
+        <div class="card d-flex  align-items-center mr-5 cr">
+            <img class="card-img-top h-70 w-100" src="https://i.imgur.com/ZH5HmAF.png" alt="Card image cap">
+            <div class="card-body">
+                <button class="btn btn-success font_n" data-toggle="modal" data-target="#modalCriaGrupo">Crie seu
+                    grupo</button>
             </div>
         </div>
+
         <!-- fim card criar grupo -->
 
         <!-- listagem  de grupos criados por voce -->
-        <div class="col mt-2" *ngFor='let grupo of grupoCriadoPorVoce'>
-            <div class="card d-flex  align-items-center">
-                <img class="card-img-top h-100 w-100" [src]="grupo.fotoPerfil" alt="Card image cap">
+        <div class="col mt-2 " *ngFor='let grupo of grupoCriadoPorVoce'>
+            <div class="card d-flex  align-items-center cr b_card mb-2">
+                <div class="img1 "><img class=" tamanhoC card-img-top h-100 w-100 img-fluid img1" [src]="grupo.fotoCapa"
+                        alt="Foto perfil grupo"></div>
+                <div class="img2"><img [src]="grupo.fotoPerfil" alt="Foto capa grupo"></div>
                 <h4 class="text-center font_n font-weight-bold"> {{grupo.nome}} </h4>
                 <p><small class="text-muted font_n font-weight-bold">{{grupo.descricao}}</small></p>
                 <div class="card-body">
-                    <a class="btn btn-info mr-2 font_n">Editar </a>
+                    <a class="btn btn-info mr-2 font_n ">Editar </a>
                     <button (click)="entrar(grupo)" class="btn btn-success font_n">Entrar </button>
                 </div>
             </div>
@@ -77,25 +79,26 @@
                 <form>
                     <div class="form-group font_n font-weight-bold">
                         <label for="nomeGrupo">Nome do grupo</label>
-                        <input [(ngModel)] = "novoGrupo.nome" name = "nome" type="text" class="form-control" id="nomeGrupo" aria-describedby="nomeHelp"
-                            placeholder="nome do grupo">
+                        <input [(ngModel)]="novoGrupo.nome" name="nome" type="text" class="form-control" id="nomeGrupo"
+                            aria-describedby="nomeHelp" placeholder="nome do grupo">
                     </div>
 
                     <div class="form-group font_n font-weight-bold">
                         <label for="fotoPerfil">Link foto perfil</label>
-                        <input [(ngModel)] = "novoGrupo.fotoPerfil" name = "fotoPerfil" type="text" class="form-control" id="fotoPerfil" aria-describedby="fotoHelp"
-                            placeholder="foto perfil">
+                        <input [(ngModel)]="novoGrupo.fotoPerfil" name="fotoPerfil" type="text" class="form-control"
+                            id="fotoPerfil" aria-describedby="fotoHelp" placeholder="foto perfil">
                     </div>
 
                     <div class="form-group font_n font-weight-bold">
                         <label for="fotoCapa">Link foto capa</label>
-                        <input [(ngModel)] = "novoGrupo.fotoCapa" name = "fotoCapa" type="text" class="form-control" id="fotocapa" aria-describedby="fotoCapaHelp"
-                            placeholder="foto capa">
+                        <input [(ngModel)]="novoGrupo.fotoCapa" name="fotoCapa" type="text" class="form-control"
+                            id="fotocapa" aria-describedby="fotoCapaHelp" placeholder="foto capa">
                     </div>
 
                     <div class="form-group font_n font-weight-bold">
                         <label for="descricaoGrupo">Descrição do Grupo</label>
-                        <textarea [(ngModel)] = "novoGrupo.descricao" name = "descricao" class="form-control" id="descricaoGrupo" rows="5"></textarea>
+                        <textarea [(ngModel)]="novoGrupo.descricao" name="descricao" class="form-control"
+                            id="descricaoGrupo" rows="5"></textarea>
                     </div>
 
                 </form>
@@ -103,7 +106,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger font_n" data-dismiss="modal">Fechar</button>
-                <button (click)="criarGrupo()" type="button" class="btn btn-success font_n" data-dismiss="modal">Criar</button>
+                <button (click)="criarGrupo()" type="button" class="btn btn-success font_n"
+                    data-dismiss="modal">Criar</button>
             </div>
         </div>
     </div>

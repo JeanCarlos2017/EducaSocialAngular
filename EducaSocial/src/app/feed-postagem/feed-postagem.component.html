@@ -1,8 +1,8 @@
 <app-home-usuario *ngIf="this.router.url !== '/grupo-home/posts' "></app-home-usuario>
 <app-home-grupo *ngIf="this.router.url === '/grupo-home/posts' "></app-home-grupo>
 
-<div class="container bg-claro">
-    <div class="row d-flex justify-content-center bg-white mt-4">
+<div class="container bg-claro cr round">
+    <div class="row d-flex justify-content-center bg-white mt-4 round">
         <!-- crie sua postagen -->
         <div *ngIf="this.router.url!== '/home-usuario/posts' " class="card-body">
             <div class="form-group">
@@ -43,7 +43,7 @@
         <!-- cim criar postagem  /////-->
     </div>
 
-    <div class="row d-flex justify-content-center bg-white mt-4">
+    <div class="row d-flex justify-content-center bg-white mt-4 round">
         <!-- begin timeline -->
         <ul class="timeline w-100 font_n">
             <li *ngFor='let post of postagemDoTema' class="w-100">
@@ -144,8 +144,8 @@
                             <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
                                 aria-controls="collapseExample">
                                 <span class="mr-5">
-                                <i class="fa fa-caret-down"  aria-hidden="true"></i> Ver mais
-                            </span>
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i> Ver mais
+                                </span>
                             </a>
                         </p>
                         <div class="collapse" id="collapseExample">

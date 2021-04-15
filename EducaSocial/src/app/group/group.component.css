@@ -19,4 +19,63 @@
 }
 
 
+.cr{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
 
+.tamanhoCard {
+    height: 200px;
+}
+
+.tamanhoCard2 {
+    height: 380px;
+}
+
+/* .tamanho {
+    width: 195px;
+} */
+
+.round {
+    border: 15px 0px 0px 0px;
+}
+
+.cr{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+/*Videos*/
+
+.img1 img {
+    height: 90px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    width: 100%;
+
+}
+
+.img2 img {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    width: 100px;
+    height: 90px;
+    border-radius: 100%;
+    border: 7px solid #fff;
+    margin-top: -20px;
+}
+
+.b_card{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.tamanhoC{
+    max-height: 60px;
+}
+
+
+.dy{
+    display: inline-block;
+}
