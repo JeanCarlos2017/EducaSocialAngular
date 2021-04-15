@@ -1,6 +1,6 @@
 import { Grupo } from "./Grupo";
 
-export class User{
+export class User {
     public id_usuario: number;
 	public email: string;
 	public senha: string;
