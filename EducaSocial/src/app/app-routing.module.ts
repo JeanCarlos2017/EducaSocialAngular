@@ -7,7 +7,9 @@ import { GroupComponent } from './group/group.component';
 import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
 import { HomeTemaComponent } from './home-tema/home-tema.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
+import { PilaresComponent } from './pilares/pilares.component';
 import { SearchComponent } from './search/search.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ThemeComponent } from './theme/theme.component';
 
 const routes: Routes = [
@@ -20,6 +22,22 @@ const routes: Routes = [
     path: 'entrar',
     component: EntrarComponent
   },
+  
+  {
+    path: 'cadastre-se',
+    component: CadastrarComponent
+  },
+
+  {
+    path: 'sobre-nos',
+    component: SobreNosComponent
+  },
+
+  {
+    path: 'pilares',
+    component: PilaresComponent
+  },
+
   
   {
     'path': 'home-usuario/grupo-usuario',
