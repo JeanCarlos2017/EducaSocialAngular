@@ -21,6 +21,8 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { NavbarPaginaEstaticaComponent } from './navbar-pagina-estatica/navbar-pagina-estatica.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { InicialComponent } from './inicial/inicial.component';
+import { ValoresComponent } from './valores/valores.component';
 
 
 
@@ -41,7 +43,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MenuComponent,
     RodapeComponent,
     NavbarPaginaEstaticaComponent,
-    AlertasComponent
+    AlertasComponent,
+    InicialComponent,
+    ValoresComponent
   ],
   imports: [
     BrowserModule,
