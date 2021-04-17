@@ -7,10 +7,12 @@ import { GroupComponent } from './group/group.component';
 import { HomeGrupoComponent } from './home-grupo/home-grupo.component';
 import { HomeTemaComponent } from './home-tema/home-tema.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
+import { InicialComponent } from './inicial/inicial.component';
 import { PilaresComponent } from './pilares/pilares.component';
 import { SearchComponent } from './search/search.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { ThemeComponent } from './theme/theme.component';
+import { ValoresComponent } from './valores/valores.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,16 @@ const routes: Routes = [
     component: PilaresComponent
   },
 
+  {
+    path: 'valores',
+    component: ValoresComponent
+  },
+
+  {
+    path: 'inicial',
+    component: InicialComponent
+  },
+  
   
   {
     'path': 'home-usuario/grupo-usuario',

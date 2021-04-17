@@ -1,6 +1,7 @@
-
-
-
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
 
 .container-fluid {
     overflow: hidden;
@@ -10,8 +11,6 @@
     margin-bottom: 0;
     padding-bottom: 0
 }
-
-
 
 
 ul.br li{
@@ -27,12 +26,20 @@ ul.br li{
     color: #fff;
 }
 
-.fa:hover{
-    color: #054f77;
+/* .fa:hover{
+    color: #ffffff;
+} */
+
+
+.fa-facebook-square:hover{
+    color: #1877f2;
+
 }
 
+.fa-instagram:hover{
+    color: #c13584;
+}
 
-
-
-   
-
+.fa-twitter-square:hover{
+    color: #1DA1F2
+}
