@@ -121,3 +121,8 @@ background: linear-gradient(90deg, rgba(35,48,182,1) 0%, rgba(16,187,154,1) 41%,
 .round {
     border-radius: 0px 15px;
 }
+
+.g{
+    display: inline;
+    
+}
