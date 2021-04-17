@@ -1,23 +1,27 @@
-/* Fonte aplicada no titulo*/
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
-
-/* Tamanho usado nos textos*/
-.fs-15{
-    font-size: 15pt;
+/*Fonte Titulo e Texto*/
+.title-font-n {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
+
+/*Cor dos titulos */
+.title-font {
+    font-family: 'Poppins', sans-serif;
+    color:#054f77;
+    font-weight: bold;
+}
+
+/*Fonte do texto */
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
+
 /*Fonte usada no titulo*/
 .fs-45{
     font-size: 45pt;
-}
-/*
-.dm{
-    height: 210px;
-}*/
-
-/*Fonte usada no titulo sobre o EducaSocial*/
-.Anton{
-    font-family: 'Anton', sans-serif;
 }
 
 .arial-naroow{
@@ -37,8 +41,7 @@
 }
 
 
-
-/* Apagar depois, caso não funcione */
+/* Efeitos e estilização das imagens laterais */
 ul.timeline {
     list-style-type: none;
     position: relative;

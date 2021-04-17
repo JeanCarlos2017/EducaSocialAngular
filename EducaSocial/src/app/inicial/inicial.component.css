@@ -1,5 +1,23 @@
-/* Fonte: ANTON */
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/*Fonte Titulo e Texto*/
+.title-font-n {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+/*Cor dos titulos */
+.title-font {
+    font-family: 'Poppins', sans-serif;
+    color:#054f77;
+    font-weight: bold;
+}
+
+/*Fonte do texto */
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
 
 .margem-b{
     margin-bottom: 0%;
@@ -9,12 +27,6 @@
 .margem-t{
     margin-top: 0%;
 }
-.fonte{
-    font-family: 'Anton', sans-serif;
-}
-/* .fonte-texto{
-
-} */
 
 /* Padding jumbotrom */
 .p-j{
@@ -49,31 +61,6 @@
 /* CSS GABS */
 
 /*Tamanho usado nas frases de efeito*/ 
-.fs-28{
-    font-size: 28pt;
-}
-
-.fs-12{
-    font-size: 12pt;
-}
-
 .fs-45{
     font-size: 45pt;
-}
-
-.dm{
-    height: 210px;
-}
-
-.Anton{
-    font-family: 'Anton', sans-serif;
-}
-/* Tamanho da imagen no carousel */
-.mg-sobre-nos{
-    width: 100%;
-    
-}
-
-.arial-naroow{
-    font-family: 'arial-naroow', sans-serif;
 }
