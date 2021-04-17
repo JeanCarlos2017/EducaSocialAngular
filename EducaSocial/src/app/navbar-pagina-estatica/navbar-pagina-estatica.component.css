@@ -19,20 +19,18 @@
 
 .but {
     height:  6vh;
-    background-color: #fff;
     display: grid;
     place-items: center;
     
 }
 
     .v {
-        text-transform: uppercase;
+        
         text-decoration: none;
         font-size: 15px;
         padding: 4px 1rem;
         border-radius: 5px;
-        border: 2px solid #054f77;;
-        color: #000;
+        border: 2px solid #054f77;;  
         position: relative;
         overflow: hidden !important;
         z-index: 1;
@@ -55,6 +53,28 @@
         transform: translateX(0%);
         z-index: -1;
     }
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/*Fonte Titulo e Texto*/
+.title-font-n {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+/*Cor dos titulos */
+.title-font {
+    font-family: 'Poppins', sans-serif;
+    color:#054f77;
+    font-weight: bold;
+}
+
+/*Fonte do texto */
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
 
 
 
