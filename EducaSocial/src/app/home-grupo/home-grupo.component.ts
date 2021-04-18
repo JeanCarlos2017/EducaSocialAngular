@@ -36,4 +36,11 @@ export class HomeGrupoComponent implements OnInit {
     })
   }
 
+  sair() {
+    this.router.navigate(['/entrar'])
+
+
+
+  }
+
 }
