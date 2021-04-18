@@ -63,10 +63,14 @@
     margin-top: -20px;
 }
 
+
 .b_card{
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
+
 
 .tamanhoC{
     max-height: 60px;
