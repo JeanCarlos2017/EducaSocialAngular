@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+/* borda dos cards */
+.b_card{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.b_foto{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
 /*Fonte Titulo e Texto*/
 .title-font-n {
     font-family: 'Poppins', sans-serif;
