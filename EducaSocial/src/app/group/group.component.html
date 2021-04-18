@@ -37,7 +37,6 @@
                 <h4 class="text-center font_n font-weight-bold"> {{grupo.nome}} </h4>
                 <p><small class="text-muted font_n font-weight-bold">{{grupo.descricao}}</small></p>
                 <div class="card-body">
-                    <a class="btn btn-info mr-2 font_n ">Editar </a>
                     <button (click)="entrar(grupo)" class="btn btn-success font_n">Entrar </button>
                 </div>
             </div>
@@ -103,7 +102,17 @@
                         <input [(ngModel)]="novoGrupo.fotoCapa" name="fotoCapa" type="text" class="form-control"
                             id="fotocapa" aria-describedby="fotoCapaHelp" placeholder="foto capa">
                     </div>
-
+                    
+                    <div class="input-group mb-3">
+                        <select name="tema" id="tema" class="form-control" [(ngModel)]= 'idTema'
+                         (change)='setTemaNovoGrupo()'>
+                            <option value="">Temas</option>
+                            <option *ngFor='let tema of temaList' value="{{tema.id_tema}}" >
+                                {{tema.categoria}}
+                            </option>
+                        </select>
+                    </div>
+                    
                     <div class="form-group font_n font-weight-bold">
                         <label for="descricaoGrupo">Descrição do Grupo</label>
                         <textarea [(ngModel)]="novoGrupo.descricao" name="descricao" class="form-control"
@@ -150,11 +159,12 @@
 
 
                     <div class="input-group mb-3">
-                        <select class="custom-select" id="selectTema" name="selectTema">
-                            <option selected>Selecione um tema</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select name="tema" id="tema" class="form-control" [(ngModel)]= 'idTema'
+                         (change)='setTemaNovoGrupo()'>
+                            <option value="">Temas</option>
+                            <option *ngFor='let tema of temaList' value="{{tema.id_tema}}" >
+                                {{tema.categoria}}
+                            </option>
                         </select>
                     </div>
 
