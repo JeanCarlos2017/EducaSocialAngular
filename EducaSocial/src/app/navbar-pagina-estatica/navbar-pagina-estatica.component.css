@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+.fonte{
+
+    font-family: 'Anton', sans-serif;
+    width: 200px;
+    font-size: 40px;
+    color: #054f77;
+}
+
+.logo-nb{
+
+    width: 5%;
+    height: 5%;
+}
+
+
+
+.but {
+    height:  6vh;
+    display: grid;
+    place-items: center;
+    
+}
+
+    .v {
+        
+        text-decoration: none;
+        font-size: 15px;
+        padding: 4px 1rem;
+        border-radius: 5px;
+        border: 2px solid #054f77;;  
+        position: relative;
+        overflow: hidden !important;
+        z-index: 1;
+        transition: all 0.3s linear;
+    }
+
+    .v::before {
+        content: '';
+        position: absolute;
+        background-color:#054f77;;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: all 0.3s linear
+    }
+    
+    .v:hover:before {
+        transform: translateX(0%);
+        z-index: -1;
+    }
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/*Fonte Titulo e Texto*/
+.title-font-n {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+/*Cor dos titulos */
+.title-font {
+    font-family: 'Poppins', sans-serif;
+    color:#054f77;
+    font-weight: bold;
+}
+
+/*Fonte do texto */
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+
+
+
+
+

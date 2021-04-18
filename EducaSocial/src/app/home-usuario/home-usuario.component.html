@@ -1,10 +1,10 @@
-<div class="container p-0 bg-dark">
+<div class="container p-0 bg-dark round">
     <div class="row">
         <div class="col-md-12">
             <div id="content" class="content content-full-width">
                 <!-- begin profile -->
                 <div class="profile">
-                    <div class="profile-header">
+                    <div class="profile-header round">
                         <!-- BEGIN profile-header-cover -->
                         <div class="profile-header-cover"></div>
                         <!-- END profile-header-cover -->
@@ -21,10 +21,14 @@
                                      then infoUsuario else infoTema">
                                 </div>
                                 <ng-template #infoUsuario>
-                                    <h4 class="m-t-10 m-b-5  font_n">{{ nome_usuario }}</h4>
+                                    <a (click)='sair()' class="g ml-auto text-white d-flex justify-content-end"> <i class="fa fa-sign-out text-white" aria-hidden="true"></i>sair </a>
+                                    <h4 class="m-t-10 m-b-5  font_n g ">{{ nome_usuario }}</h4>
                                     <p class="m-b-10  font_n">Código Usuário: {{ codigo_usuario}} </p>
                                     <button class="btn btn-sm btn-info mb-2  font_n" disabled>Editar perfil</button>
+                                    <div class="d-flex justify-content-end"></div>
                                 </ng-template>
+
+                               
                                 <ng-template #infoTema>
                                     <div class="row d-flex justify-content-center">
                                         <h4 class="m-t-10 m-b-5 text-center mb-4 font_n">Tema: {{descricaoTema }}</h4>
@@ -33,9 +37,12 @@
                                         <a class="btn btn-sm btn-info mb-2  font_n">Editar Tema</a>
                                     </div>
                                 </ng-template>
+                                
 
 
                             </div>
+
+                         
                             <!-- END profile-header-info -->
                         </div>
                         <!-- END profile-header-content -->

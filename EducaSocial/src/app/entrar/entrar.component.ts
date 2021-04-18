@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../models/UserLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class EntrarComponent implements OnInit {
 
   constructor(private router: Router, 
               private authService: AuthService, 
-              private title: Title) { }
+              private title: Title,
+              private alertas: AlertasService) { }
 
   userLogin: UserLogin= new UserLogin();
 
@@ -36,7 +38,7 @@ export class EntrarComponent implements OnInit {
         
         //informo o usuário e o redireciono
         this.router.navigate(['/home-usuario/tema']);
-        alert('usuario logado com sucesso!');
+        this.alertas.showAlertSuccess('usuario logado com sucesso!');
 
     }, erro =>{
       if(erro.status == 404){

@@ -1,38 +1,45 @@
-<div class="container p-0 bg-dark">
+<div class="container p-0 bg-dark cr round">
     <div class="row">
         <div class="col-md-12">
             <div id="content" class="content content-full-width">
                 <!-- begin profile -->
                 <div class="profile">
-                    <div class="profile-header">
+                    <div class="profile-header round">
+        
                         <!-- BEGIN profile-header-cover -->
                         <div class="profile-header-cover"></div>
                         <!-- END profile-header-cover -->
                         <!-- BEGIN profile-header-content -->
-                        <div class="profile-header-content">
+                        <div class="profile-header-content cor">
+
                             <!-- BEGIN profile-header-img -->
-                            <div  class="profile-header-img">
-                                <img [src]="fotoPerfil" alt="">
+                            <div class="profile-header-img">
+                                <img class="w-100 h-100" [src]="fotoPerfil" alt="">
                             </div>
                             <!-- END profile-header-img -->
                             <!-- BEGIN profile-header-info -->
                             <div class="profile-header-info ">
-                                    <h4 class="m-t-10 m-b-5 font_n">Nome: {{nome}}</h4>
-                                    <p class="m-b-10 font_n">Descrição: {{descricao}}</p>
-                                    <a class="btn btn-sm btn-info mb-2 font_n">Editar Grupo</a>
-                               </div>
+                   
+                                
+                                <h4 class="m-t-10 m-b-5 font_n g">Nome: {{nome}}</h4>
+                                <p class="m-b-10 font_n">Descrição: {{descricao}}</p>
+                                <a class="btn btn-sm btn-info mb-2 font_n">Editar Grupo</a>
+                            </div>
+                         
+                            
                             <!-- END profile-header-info -->
                         </div>
                         <!-- END profile-header-content -->
-
                     </div>
+                   
                 </div>
                 <!-- end profile -->
-
-
             </div>
         </div>
+
     </div>
+
+
 </div>
 
 <div class="container p-0">
@@ -42,9 +49,8 @@
                 <i class="fa fa-rocket mr-2"></i> Posts</a>
         </li>
         <li class="nav-item font_n"><a routerLink='/home-usuario/tema' class="nav-link">
-            <i class="fa fa-backward mr-2"></i> Voltar</a>
+                <i class="fa fa-backward mr-2"></i> Voltar</a>
         </li>
     </ul>
     <!-- END profile-header-tab -->
 </div>
-

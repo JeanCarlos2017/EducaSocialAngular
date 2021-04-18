@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -20,7 +21,8 @@ export class ThemeComponent implements OnInit {
   constructor(private temaService: TemaService, 
               private title: Title,
               private router: Router, 
-              private postagemService: PostagemService) { }
+              private postagemService: PostagemService,
+              private alertas: AlertasService) { }
 
  ngOnInit(): void {
   window.scroll(0,0);
@@ -41,7 +43,7 @@ export class ThemeComponent implements OnInit {
   cadastrarTema(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
       this.tema= resp;
-      alert("Tema cadastrado com sucesso! ");
+      this.alertas.showAlertSuccess("Tema cadastrado com sucesso! ");
       this.tema= new Tema();
       this.findAllTema(); //atualizo a lista de temas 
     })
