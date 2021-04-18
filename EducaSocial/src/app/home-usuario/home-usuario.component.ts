@@ -39,4 +39,11 @@ export class HomeUsuarioComponent implements OnInit {
     }
   }
 
+  sair() {
+    this.router.navigate(['/entrar'])
+
+
+
+  }
+
 }

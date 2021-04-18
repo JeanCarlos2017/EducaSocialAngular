@@ -1,0 +1,45 @@
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.container-fluid {
+    overflow: hidden;
+    margin-top: 250px;
+    background: #262626;
+    color: #627482 !important;
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+
+ul.br li{
+    display: inline;
+    padding: 20px;
+    font-size: 40px;
+    list-style: none;
+    
+}
+
+.fa{
+
+    color: #fff;
+}
+
+/* .fa:hover{
+    color: #ffffff;
+} */
+
+
+.fa-facebook-square:hover{
+    color: #1877f2;
+
+}
+
+.fa-instagram:hover{
+    color: #c13584;
+}
+
+.fa-twitter-square:hover{
+    color: #1DA1F2
+}

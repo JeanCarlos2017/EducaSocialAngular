@@ -2,32 +2,42 @@
 
 <!-- Grupos criados por voce -->
 <div class="container mt-4">
-    <div class="row m-2">
-        <h2 class="display-4 text-center"> Grupos criados por você!</h2>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
         <!-- card para criar novos grupos -->
-        <div class="col mt-2 ">
-            <div class="card d-flex  align-items-center ">
-                <img class="card-img-top h-50 w-50" src="https://i.imgur.com/ZH5HmAF.png" alt="Card image cap">
-                <div class="card-body">
-                    <button class="btn btn-success" data-toggle="modal" data-target="#modalCriaGrupo">Crie seu
-                        grupo</button>
-                </div>
+        <div class="row row-cols-1 row-cols-md-5 g-4 h-50 justify-content-center mb-5 ">
+        <div class="card d-flex  align-items-center mr-5 cr b_card">
+            <img class="card-img-top h-70 w-100" src="https://i.imgur.com/VHBiw3L.png" alt="Card image cap">
+            <div class="card-body">
+                <button class="btn btn-success font_n" data-toggle="modal" data-target="#modalCriaGrupo">Crie seu
+                    grupo</button>
             </div>
         </div>
+        <div class="card d-flex  align-items-center mr-5 cr b_card">
+            <img class="card-img-top h-70 w-100" src="https://i.imgur.com/q3C5IZo.png" alt="Card image cap">
+            <div class="card-body ">
+                <button class="btn btn-success font_n" data-toggle="modal" data-target="#modalCriaGrupo">Apoie um aluno</button>
+            </div>
+        </div>
+        </div>
+
+        <hr>
+
+    <div class="row row-cols-1 row-cols-md-5 g-4 h-50 mt-2">
+
+
+        
+
         <!-- fim card criar grupo -->
 
         <!-- listagem  de grupos criados por voce -->
-        <div class="col mt-2" *ngFor='let grupo of grupoCriadoPorVoce'>
-            <div class="card d-flex  align-items-center ">
-                <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
-                <h4 class="text-center"> {{grupo.nome}} </h4>
-                <p><small class="text-muted">{{grupo.descricao}}</small></p>
+        <div class="col mt-2 " *ngFor='let grupo of grupoCriadoPorVoce'>
+            <div class="card d-flex  align-items-center cr b_card mb-2">
+                <div class="img1 "><img class=" tamanhoC card-img-top h-100 w-100 img-fluid img1" [src]="grupo.fotoCapa"
+                        alt="Foto perfil grupo"></div>
+                <div class="img2"><img [src]="grupo.fotoPerfil" alt="Foto capa grupo"></div>
+                <h4 class="text-center font_n font-weight-bold"> {{grupo.nome}} </h4>
+                <p><small class="text-muted font_n font-weight-bold">{{grupo.descricao}}</small></p>
                 <div class="card-body">
-                    <a class="btn btn-info mr-2">Editar </a>
-                    <button (click)= "entrar(grupo)" class="btn btn-success">Entrar </button>
+                    <button (click)="entrar(grupo)" class="btn btn-success font_n">Entrar </button>
                 </div>
             </div>
         </div>
@@ -37,19 +47,22 @@
 </div>
 
 <!-- Grupos que voce participa -->
-<div class="container mb-4">
-    <div class="row m-2 ">
-        <h2 class="display-4 text-center"> Grupos que você participa! </h2>
+<div class="container mb-4 ">
+    <div class="row m-2 d-flex justify-content-center">
+        <h2 class="display-4 text-center font font-weight-bold"> Grupos que você participa</h2>
     </div>
     <div class="row row-cols-1 row-cols-md-3 g-4 ">
         <!-- listagem  de grupos criados por voce -->
         <div class="col mt-2" *ngFor='let grupo of grupoParticipante'>
-            <div class="card d-flex  align-items-center ">
-                <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
-                <h4 class="text-center"> {{grupo.nome}} </h4>
-                <p><small class="text-muted">{{grupo.descricao}}</small></p>
-                <div class="card-body">
-                    <a (click)= "entrar(grupo)" class="btn btn-success">Entrar </a>
+            <div class="card-deck d-flex  align-items-center ">
+
+                <div class="card">
+                    <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
+                    <h4 class="text-center font_n font-weight-bold"> {{grupo.nome}} </h4>
+                    <p><small class="text-muted font_n font-weight-bold">{{grupo.descricao}}</small></p>
+                    <div class="card-body">
+                        <a (click)="entrar(grupo)" class="btn btn-success font_n">Entrar </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,53 +77,55 @@
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="TituloModalCentralizado">Crie seu grupo</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="modal-header justify-content-center">
+                <h4 class="modal-title text-center font_n cor font-weight-bold" id="TituloModalCentralizado">Crie seu
+                    grupo</h4>
+
             </div>
             <div class="modal-body">
                 <!-- form -->
                 <form>
-                    <div class="form-group">
+                    <div class="form-group font_n font-weight-bold">
                         <label for="nomeGrupo">Nome do grupo</label>
-                        <input type="text" class="form-control" id="nomeGrupo" aria-describedby="nomeHelp"
-                            placeholder="nome do grupo">
+                        <input [(ngModel)]="novoGrupo.nome" name="nome" type="text" class="form-control" id="nomeGrupo"
+                            aria-describedby="nomeHelp" placeholder="nome do grupo">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group font_n font-weight-bold">
                         <label for="fotoPerfil">Link foto perfil</label>
-                        <input type="text" class="form-control" id="fotoPerfil" aria-describedby="fotoHelp"
-                            placeholder="foto perfil">
+                        <input [(ngModel)]="novoGrupo.fotoPerfil" name="fotoPerfil" type="text" class="form-control"
+                            id="fotoPerfil" aria-describedby="fotoHelp" placeholder="foto perfil">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group font_n font-weight-bold">
                         <label for="fotoCapa">Link foto capa</label>
-                        <input type="text" class="form-control" id="fotocapa" aria-describedby="fotoCapaHelp"
-                            placeholder="foto capa">
+                        <input [(ngModel)]="novoGrupo.fotoCapa" name="fotoCapa" type="text" class="form-control"
+                            id="fotocapa" aria-describedby="fotoCapaHelp" placeholder="foto capa">
                     </div>
-
+                    
                     <div class="input-group mb-3">
-                        <select class="custom-select" id="selectTema" name="selectTema">
-                            <option selected>Selecione um tema</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select name="tema" id="tema" class="form-control" [(ngModel)]= 'idTema'
+                         (change)='setTemaNovoGrupo()'>
+                            <option value="">Temas</option>
+                            <option *ngFor='let tema of temaList' value="{{tema.id_tema}}" >
+                                {{tema.categoria}}
+                            </option>
                         </select>
                     </div>
-
-                    <div class="form-group">
+                    
+                    <div class="form-group font_n font-weight-bold">
                         <label for="descricaoGrupo">Descrição do Grupo</label>
-                        <textarea class="form-control" id="descricaoGrupo" rows="5"></textarea>
+                        <textarea [(ngModel)]="novoGrupo.descricao" name="descricao" class="form-control"
+                            id="descricaoGrupo" rows="5"></textarea>
                     </div>
 
                 </form>
                 <!-- fim form -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar mudanças</button>
+                <button type="button" class="btn btn-danger font_n" data-dismiss="modal">Fechar</button>
+                <button (click)="criarGrupo()" type="button" class="btn btn-success font_n"
+                    data-dismiss="modal">Criar</button>
             </div>
         </div>
     </div>
@@ -144,11 +159,12 @@
 
 
                     <div class="input-group mb-3">
-                        <select class="custom-select" id="selectTema" name="selectTema">
-                            <option selected>Selecione um tema</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select name="tema" id="tema" class="form-control" [(ngModel)]= 'idTema'
+                         (change)='setTemaNovoGrupo()'>
+                            <option value="">Temas</option>
+                            <option *ngFor='let tema of temaList' value="{{tema.id_tema}}" >
+                                {{tema.categoria}}
+                            </option>
                         </select>
                     </div>
 

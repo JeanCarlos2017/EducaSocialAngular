@@ -1,6 +1,6 @@
 import { Comentario } from "./Comentario";
 import { Tema } from "./Tema";
-import { User } from "./user";
+import { User } from "./User";
 
 
 

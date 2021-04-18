@@ -229,15 +229,15 @@
     color: #ff5b57!important;
 }
 
-.fa-thumbs-up:hover{
+.verde:hover{
     color: rgb(4, 241, 4);
 }
 
-.fa-thumbs-down:hover{
+.vermelho:hover{
     color: red;
 }
 
-.fa-comments:hover{
+.amarelo:hover{
     color: orange;
 
 }
@@ -257,4 +257,22 @@ p{
         margin: 5% 1%;
         padding: 5px 0;
     }
+}
+
+.font_n {
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+
+.p {
+    padding-right: 20px;
+}
+
+.cr{
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.round {
+    border-radius: 15px;
 }

@@ -1,38 +1,38 @@
 <app-home-usuario></app-home-usuario>
 
 <!-- Temas existentes -->
-<div class="container mt-4">
-    <div class="row m-2">
-        <h2 class="display-4 text-center">Supimpa, voce chegou até aqui <i class="fa fa-globe-asia"></i></h2>
+<div class="container text-center mt-4">
+    <div>
+        <h2 class="display-4  font font-weight-bold">Crie o seu tema</h2>
     </div>
-    
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+
+    <div class="row row-cols-1 row-cols-md-3 g-2 justify-content-center">
         <!-- card para criar novos grupos -->
-        <div class="col mt-2 ">
-            <div class="card d-flex  align-items-center ">
-                <img class="card-img-top h-50 w-50" src="https://i.imgur.com/ZH5HmAF.png" alt="Card image cap">
-                <div class="card-body">
-                    <button class="btn btn-success" data-toggle="modal" data-target="#modalEditarTema">Crie seu
-                        tema</button>
+        <div class="col mt-2">
+            <div class="card d-flex  align-items-center cr b_card">
+                <img class="card-img-top h-50 w-50 mt-4" src="https://i.imgur.com/yqMkmbE.png" alt="Card image cap">
+                <div class="card-body border-0">
+                    <button class="btn btn-success font_n" data-toggle="modal"
+                        data-target="#modalEditarTema">Criar</button>
                 </div>
             </div>
         </div>
         <!-- fim card criar grupo -->
     </div>
-    <h2 class="display-4 text-center">Ou Participe de um tema existente</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+
+    <hr>
+    <h2 class="display-4 text-center font font-weight-bold mb-2 mt-2">Temas existentes</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col mt-2" *ngFor='let tema of listaTemas'>
-            <div class="card ">
-                <div class="card-body ">
-                    <p class="card-text mt-3">{{ tema.categoria}}</p>
-                    <button (click)='entrar(tema.id_tema, tema.categoria)' class="btn btn-success">Entrar </button>
+            <div class="card b_card cr">
+                <div class="card-body">
+                    <p class="card-text mt-3 font_n font-weight-bold">{{ tema.categoria}}</p>
+                    <button (click)='entrar(tema.id_tema, tema.categoria)' class="btn btn-success font_n">Entrar
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <hr>
 </div>
 
 <!-- modal editar grupo -->
@@ -40,25 +40,27 @@
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-center" id="TituloModalCentralizado">Crie o seu tema</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <div class="modal-header justify-content-center ">
+                <h4 class="modal-title cor font_n font-weight-bold" id="TituloModalCentralizado">Crie o seu tema</h4>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                     <span aria-hidden="true">&times;</span>
-                </button>
+                </button> -->
             </div>
             <div class="modal-body">
                 <!-- form -->
                 <form>
                     <div class="form-group">
-                        <label for="descricaoTema">Descrição do tema</label>
-                        <input [(ngModel)]= 'tema.categoria' name='descricao' type="text" class="form-control" id="descricaoTema" aria-describedby="descricaoTema" placeholder="descrição do tema">
+                        <label class="font_n font-weight-bold " for="descricaoTema">Descrição do tema</label>
+                        <input [(ngModel)]='tema.categoria' name='descricao' type="text" class="form-control"
+                            id="descricaoTema" aria-describedby="descricaoTema" placeholder="Digite seu tema">
                     </div>
                 </form>
                 <!-- fim form -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button (click)= 'cadastrarTema()' type="button" class="btn btn-success" data-dismiss="modal">Salvar novo tema</button>
+                <button type="button" class="btn btn-danger font_n" data-dismiss="modal">Fechar</button>
+                <button (click)='cadastrarTema()' type="button" class="btn btn-success font_n"
+                    data-dismiss="modal">Criar</button>
             </div>
         </div>
     </div>

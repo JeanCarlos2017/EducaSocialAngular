@@ -1,6 +1,6 @@
 <app-home-usuario></app-home-usuario>
 <div class="container mt-4">
-    <h2 class="display-4 text-center">Tema </h2>
+    <h2 class="display-4 text-center font font-weight-bold font_n">Tema </h2>
     <form class="form-inline d-flex justify-content-center mt-4">
         <div class="input-group">
             <div class="input-group-prepend ">
@@ -15,44 +15,48 @@
 
     <!-- seção que mostra os temas  -->
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 arred mt-5 ">
         <div class="col mt-2" *ngFor='let tema of temaPesquisado'>
-            <div class="card ">
-                <div class="card-body ">
-                    <p class="card-text mt-3">{{ tema.categoria}}</p>
-                    <button (click)='entrarTema(tema.id_tema, tema.categoria)' class="btn btn-success">Entrar </button>
+            <div class="card border-0 mb-3 mt-3">
+                <div class="card-body cr b_card">
+                    <p class="card-text mt-3 font_n font-weight-bold text-center mb-0">{{ tema.categoria}}</p>
+                    <div class="d-flex justify-content-center">
+                    <button (click)='entrarTema(tema.id_tema, tema.categoria)' class="btn btn-success font_n ">Entrar
+                    </button></div>
                 </div>
             </div>
         </div>
     </div>
-
-    <hr>
 </div>
 
 
 
 
-<div class="container mt-4">
-    <h2 class="display-4 text-center">Grupo</h2>
+<div class="container">
+    <h2 class="display-4 text-center font font-weight-bold font_n">Grupo</h2>
     <form class="form-inline d-flex justify-content-center mt-4">
         <div class="input-group ">
             <div class="input-group-prepend ">
                 <span class="input-group-text bg-primary" id="basic-addon1"><i class="fa fa-search"></i></span>
             </div>
-            <input [(ngModel)]="descricaoGrupo" name="descricaoGrupo" (keyup)="buscaGrupo()" type="text" class="form-control" placeholder="pesquisa por grupo" aria-label="Username"
+            <input [(ngModel)]="descricaoGrupo" name="descricaoGrupo" (keyup)="buscaGrupo()" type="text"
+                class="form-control" placeholder="pesquisa por grupo" aria-label="Username"
                 aria-describedby="basic-addon1">
         </div>
     </form>
-    <hr>
+    <hr class="mt-4">
     <!-- seção que mostra os grupo -->
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+    <div class="row row-cols-1 row-cols-md-5 g-4 mb-5 arred ">
         <div class="col mt-2" *ngFor='let grupo of grupoPesquisado'>
-            <div class="card d-flex  align-items-center ">
-                <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap">
-                <h4 class="text-center"> {{grupo.nome}} </h4>
-                <p><small class="text-muted">{{grupo.descricao}}</small></p>
+            <div class="card d-flex  align-items-center mb-3 mt-3 cr w-100 b_card">
+                <div class="img1 "><img class=" tamanhoC card-img-top img-fluid" [src]="grupo.fotoCapa"
+                    alt="Foto perfil grupo"></div>
+            <div class="img2"><img [src]="grupo.fotoPerfil" alt="Foto capa grupo"></div>
+                <!-- <img class="card-img-top h-50 w-50" [src]="grupo.fotoPerfil" alt="Card image cap"> -->
+                <h4 class="text-center font_n font-weight-bold"> {{grupo.nome}} </h4>
+                <p><small class="text-muted font_n font-weight-bold">{{grupo.descricao}}</small></p>
                 <div class="card-body">
-                    <a (click)="entrarGrupo(grupo)" class="btn btn-success mr-2">Entrar </a>
+                    <a (click)="entrarGrupo(grupo)" class="btn btn-success mr-2 font_n">Entrar </a>
                 </div>
             </div>
         </div>

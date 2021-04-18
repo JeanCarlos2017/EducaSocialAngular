@@ -16,6 +16,13 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { PilaresComponent } from './pilares/pilares.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { MenuComponent } from './menu/menu.component';
+import { RodapeComponent } from './rodape/rodape.component';
+import { NavbarPaginaEstaticaComponent } from './navbar-pagina-estatica/navbar-pagina-estatica.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { InicialComponent } from './inicial/inicial.component';
+import { ValoresComponent } from './valores/valores.component';
 
 
 
@@ -32,13 +39,20 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     EntrarComponent,
     CadastrarComponent,
     PilaresComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    MenuComponent,
+    RodapeComponent,
+    NavbarPaginaEstaticaComponent,
+    AlertasComponent,
+    InicialComponent,
+    ValoresComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     FormsModule,
-    HttpClientModule, 
+    HttpClientModule,
+    ModalModule.forRoot() 
 
   ],
   providers: [],

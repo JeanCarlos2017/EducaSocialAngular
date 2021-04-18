@@ -41,7 +41,10 @@ export class GrupoService {
   }
 
   addPostagemAoGrupo(idGrupo:number, post: Postagem): Observable<Postagem>{
-    console.log(idGrupo)
     return this.httpClient.post<Postagem>(`http://localhost:8080/usuario/${this.idUser}/grupo/${idGrupo}/add-postagem`, post, this.token);
+  }
+
+  criaGrupo(grupo: Grupo):Observable<Grupo>{
+    return this.httpClient.post<Grupo>(`http://localhost:8080/usuario/${this.idUser}/grupo/cadastrar`, grupo, this.token);
   }
 }

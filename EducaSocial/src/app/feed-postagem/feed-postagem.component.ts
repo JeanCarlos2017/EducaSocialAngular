@@ -7,7 +7,8 @@ import { Comentario } from '../models/Comentario';
 import { Grupo } from '../models/Grupo';
 import { Postagem } from '../models/Postagem';
 import { Tema } from '../models/Tema';
-import { User } from '../models/user';
+import { User } from '../models/User';
+import { AlertasService } from '../service/alertas.service';
 import { ComentarioService } from '../service/comentario.service';
 import { GrupoService } from '../service/grupo.service';
 import { PostagemService } from '../service/postagem.service';
@@ -23,7 +24,8 @@ export class FeedPostagemComponent implements OnInit {
   constructor(public router: Router,
     private postagemService: PostagemService,
     private comentarioService: ComentarioService,
-    private grupoService: GrupoService) { }
+    private grupoService: GrupoService,
+    private alertas: AlertasService) { }
 
   postagemDoTema: Postagem[];
   novaPostagem: Postagem = new Postagem();
@@ -91,7 +93,7 @@ export class FeedPostagemComponent implements OnInit {
       //faço a chamada no service 
       this.postagemService.postPostagem(this.novaPostagem).subscribe((resp: Postagem) => {
         this.novaPostagem = resp;
-        alert("post cadastrado com sucesso");
+        this.alertas.showAlertSuccess("post cadastrado com sucesso");
         this.postagemDoTema.push(this.novaPostagem);
         this.novaPostagem = new Postagem();
       });
@@ -173,7 +175,6 @@ export class FeedPostagemComponent implements OnInit {
 
         //limpo o comentário
         this.comentarioNovo = new Comentario();
-        console.log()
       });
     
   }
@@ -198,7 +199,7 @@ export class FeedPostagemComponent implements OnInit {
     console.log(idGrupo)
     this.grupoService.addPostagemAoGrupo(idGrupo, post).subscribe((resp: Postagem) => {
       this.novaPostagem = resp;
-      alert("post cadastrado com sucesso");
+      this.alertas.showAlertSuccess("post cadastrado com sucesso");
       this.postagemDoTema.push(this.novaPostagem);
       this.novaPostagem = new Postagem();
     })

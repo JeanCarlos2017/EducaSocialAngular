@@ -32,4 +32,7 @@ export class TemaService {
   buscaTemaPorDescricao(descricao: string): Observable<Tema[]>{
     return this.httpClient.get<Tema[]>(`http://localhost:8080/tema/busca-descricao/${descricao}`, this.token)
   }
+  findById(id: number): Observable<Tema>{
+    return this.httpClient.get<Tema>(`http://localhost:8080/tema/busca/${id}`, this.token)
+  }
 }

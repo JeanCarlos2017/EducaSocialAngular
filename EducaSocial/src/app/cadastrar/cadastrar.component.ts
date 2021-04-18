@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { User } from '../models/user';
+import { User } from '../models/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,9 @@ export class CadastrarComponent implements OnInit {
 
   constructor(private router: Router, 
     private authService: AuthService, 
-    private title: Title) { }
+    private title: Title,
+    private alertas: AlertasService
+    ) { }
 
   ngOnInit(): void {
     window.scroll(0,0);
@@ -32,10 +35,10 @@ export class CadastrarComponent implements OnInit {
         this.user= resp;
         this.user= new User();
         this.router.navigate(['/entrar']);
-        alert('Usuário cadastrado com sucesso');
+        this.alertas.showAlertSuccess('Usuário cadastrado com sucesso');
       });
     }else{
-      alert('As senhas não correspondem')
+      this.alertas.showAlertDanger('As senhas não correspondem')
     }
   }
 }
