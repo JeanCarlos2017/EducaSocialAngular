@@ -20,7 +20,7 @@
 
 
 .cr{
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .tamanhoCard {
@@ -40,7 +40,7 @@
 }
 
 .cr{
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 /*Videos*/
@@ -69,6 +69,8 @@
 .b_card{
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .tamanhoC{
@@ -79,3 +81,7 @@
 .dy{
     display: inline-block;
 }
+
+.b_cards{
+    border-radius: 10px;
+}    

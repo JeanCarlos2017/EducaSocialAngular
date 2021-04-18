@@ -6,12 +6,12 @@
         <h2 class="display-4  font font-weight-bold">Crie o seu tema</h2>
     </div>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center ">
+    <div class="row row-cols-1 row-cols-md-3 g-2 justify-content-center">
         <!-- card para criar novos grupos -->
         <div class="col mt-2">
-            <div class="card d-flex  align-items-center ">
-                <img class="card-img-top h-50 w-50" src="https://i.imgur.com/ZH5HmAF.png" alt="Card image cap">
-                <div class="card-body">
+            <div class="card d-flex  align-items-center cr b_card">
+                <img class="card-img-top h-50 w-50 mt-4" src="https://i.imgur.com/yqMkmbE.png" alt="Card image cap">
+                <div class="card-body border-0">
                     <button class="btn btn-success font_n" data-toggle="modal"
                         data-target="#modalEditarTema">Criar</button>
                 </div>
@@ -22,10 +22,10 @@
 
     <hr>
     <h2 class="display-4 text-center font font-weight-bold mb-2 mt-2">Temas existentes</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4 ">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col mt-2" *ngFor='let tema of listaTemas'>
-            <div class="card ">
-                <div class="card-body ">
+            <div class="card b_card cr">
+                <div class="card-body">
                     <p class="card-text mt-3 font_n font-weight-bold">{{ tema.categoria}}</p>
                     <button (click)='entrar(tema.id_tema, tema.categoria)' class="btn btn-success font_n">Entrar
                     </button>
@@ -33,9 +33,6 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
 
 <!-- modal editar grupo -->
